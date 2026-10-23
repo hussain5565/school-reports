@@ -42,6 +42,15 @@ button{font-family:inherit;font-size:15px;font-weight:700;border:0;border-radius
 .ghost{background:#e8eef1;color:var(--navy)}
 .small{font-size:12px;padding:6px 10px;border-radius:8px;background:#e8eef1;color:var(--navy);font-weight:500}
 button:disabled{opacity:.6;cursor:wait}
+/* dropdown for datalist fields (works on phones) */
+.cb-wrap{position:relative}
+.cb-wrap>input{padding-left:44px!important}
+.cb-btn{position:absolute;left:4px;top:4px;bottom:4px;width:38px;border:0;border-radius:8px;background:var(--green-l,#e6f2ea);color:#04472a;font-size:16px;cursor:pointer;padding:0}
+.cb-list{position:absolute;right:0;left:0;top:100%;margin-top:4px;z-index:50;background:#fff;border:2px solid #006c35;border-radius:10px;max-height:240px;overflow:auto;box-shadow:0 10px 24px rgba(0,0,0,.18)}
+.cb-list[hidden]{display:none}
+.cb-list button{display:block;width:100%;text-align:right;border:0;border-bottom:1px solid #e6f2ea;background:#fff;padding:12px 14px;font:inherit;font-size:15px;cursor:pointer;color:#0f2a1c}
+.cb-list button:last-child{border-bottom:0}
+.cb-list button:hover,.cb-list button:focus{background:#e6f2ea;outline:none}
 .thumbs{display:flex;gap:6px;flex-wrap:wrap}
 .thumbs div{position:relative}
 .thumbs img{width:64px;height:48px;object-fit:cover;border-radius:6px;border:1px solid #ccd}
@@ -2629,6 +2638,31 @@ renderThumbs();
 applyTab();
 render();
 if(document.fonts && document.fonts.ready) document.fonts.ready.then(()=>render());
+
+/* ---------- dropdown choices for every input with a datalist ---------- */
+(function(){
+  const open = {box:null};
+  function closeAll(){ document.querySelectorAll('.cb-list').forEach(l=>l.hidden=true); }
+  document.addEventListener('click', e=>{ if(!e.target.closest('.cb-wrap')) closeAll(); });
+  document.querySelectorAll('input[list]').forEach(inp=>{
+    const dl = document.getElementById(inp.getAttribute('list')); if(!dl) return;
+    const opts = [...dl.options].map(o=>o.value||o.textContent).filter(Boolean);
+    if(!opts.length) return;
+    inp.removeAttribute('list');
+    const wrap = document.createElement('div'); wrap.className='cb-wrap';
+    inp.parentNode.insertBefore(wrap, inp); wrap.appendChild(inp);
+    const btn = document.createElement('button'); btn.type='button'; btn.className='cb-btn'; btn.textContent='▾'; btn.setAttribute('aria-label','عرض الخيارات');
+    const list = document.createElement('div'); list.className='cb-list'; list.hidden=true;
+    opts.forEach(v=>{
+      const b=document.createElement('button'); b.type='button'; b.textContent=v;
+      b.onclick=()=>{ inp.value=v; inp.dispatchEvent(new Event('input',{bubbles:true})); inp.dispatchEvent(new Event('change',{bubbles:true})); list.hidden=true; };
+      list.appendChild(b);
+    });
+    btn.onclick=()=>{ const was=list.hidden; closeAll(); list.hidden=!was; };
+    inp.addEventListener('focus', ()=>{ closeAll(); list.hidden=false; });
+    wrap.appendChild(btn); wrap.appendChild(list);
+  });
+})();
 </script>
 </body>
 </html>
