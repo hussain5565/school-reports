@@ -179,9 +179,65 @@ td.s{text-align:center;white-space:nowrap}
 .grid4 .field>span{font-size:11px;right:8px;padding:0 4px}
 .att h4{margin:2px 0 5px;color:var(--green);font-size:14px;text-align:center}
 
+/* ---- analysis tab ---- */
+.an-page+.an-page{margin-top:18px}
+.foot{position:relative}
+.foot .pg{position:absolute;right:18px;top:50%;transform:translateY(-50%);font-size:12px}
+.tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.tile{background:#eef8f6;border:1px solid #cfe9e3;border-radius:10px;text-align:center;padding:7px 4px 5px}
+.tile b{display:block;font-size:21px;color:var(--green);line-height:1.5}
+.tile small{font-size:12.5px;color:#444}
+.donutWrap{position:relative;width:150px;height:150px;margin:auto}
+.donutWrap svg{width:150px;height:150px;display:block}
+.donutTxt{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;line-height:1.3}
+.donutTxt b{font-size:22px;color:#2f8f87}
+.donutTxt small{font-size:13px;color:#555}
+.barrow{display:flex;align-items:center;gap:8px;margin:8px 0;font-size:12.5px}
+.barrow .lb{width:56px;text-align:right}
+.barrow .tr{flex:1;height:14px;position:relative}
+.barrow .bar{position:absolute;right:0;top:0;bottom:0;border-radius:7px}
+.barrow .ct{width:22px;text-align:left;font-size:12px}
+.legend{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;font-size:11.5px;margin-top:6px}
+.legend i{display:inline-block;width:9px;height:9px;border-radius:50%;margin-left:4px}
+.dot{display:inline-block;width:11px;height:11px;border-radius:50%;margin-right:6px;vertical-align:middle}
+.pill{display:inline-block;color:#fff;padding:2px 16px;border-radius:12px;font-size:12px;font-weight:500}
+.rk{display:inline-block;width:24px;height:24px;line-height:24px;border-radius:50%;font-size:12px;font-weight:700;background:#dde2e6;color:#555}
+.rk.r1{background:#d4af37;color:#fff}.rk.r2{background:#b9bec4;color:#fff}.rk.r3{background:#cd7f32;color:#fff}
+.sg{min-height:78px}
+.an-table td{height:36px;padding:3px 6px}
+.an-table td.n{width:70px}
+.cmpA{font-size:12px;line-height:1.3}.cmpS{font-size:10px;line-height:1.3}
+.warn{font-size:12px;color:#b03a2e;line-height:1.7}
+.addrow{display:grid;grid-template-columns:1fr 90px auto;gap:6px}
+
+/* ---- waiting-period tab ---- */
+.means{display:flex;flex-wrap:wrap;justify-content:center;gap:4px 16px;font-size:13px;line-height:1.8}
+.means i{font-style:normal;color:var(--green);font-weight:700;margin-left:3px}
+.wtxt div{margin:1px 0}
+
+/* ---- remedial plan tab ---- */
+.plan-table td{vertical-align:top;text-align:right;padding:5px 6px;height:auto;font-size:11px}
+.plan-table td.n,.plan-table td.nm{text-align:center;vertical-align:middle}
+.plan-table td.nm{font-weight:700;font-size:12px;width:100px}
+.plan-table td.n{width:30px;font-size:12px}
+.plan-table .ck{font-style:normal;color:var(--green);font-weight:700}
+.plh{text-align:center;color:var(--green);font-weight:700;font-size:14px;margin:8px 0 6px}
+.plan-table .pl{line-height:1.55;padding:1px 0}
+.plan-table th{font-size:12px}
+.stu{border:1px solid #dde4e8;border-radius:10px;padding:8px;margin-bottom:10px;background:#fbfdfe}
+.stu details{margin:6px 0 0;background:#fff}
+.stu summary{font-size:13px;padding:7px 10px}
+.stu .cnt{font-weight:400;color:var(--muted);font-size:12px}
+.stu .pick{max-height:200px;margin:0 8px}
+.stu textarea{min-height:44px;margin:6px 8px 8px;width:calc(100% - 16px)}
+.stuHead{display:grid;grid-template-columns:1fr auto auto;gap:6px}
+.stuHead button{padding:6px 10px;border-radius:8px;font-size:12px}
+.stuHead .cp{background:#e8eef1;color:var(--navy)}
+.stuHead .dl{background:#fbe9e7;color:#b03a2e}
+
 /* ---- tabs ---- */
 .tabs{display:flex;gap:8px;max-width:1500px;margin:14px auto 0;padding:0 20px}
-.tabs button{background:#dfe7eb;color:var(--navy);padding:11px 20px;border-radius:10px 10px 0 0;font-size:15px}
+.tabs button{background:#dfe7eb;color:var(--navy);padding:11px 16px;border-radius:10px 10px 0 0;font-size:15px}
 .tabs button.on{background:var(--green);color:#fff}
 @media(max-width:980px){.tabs{padding:0 12px;flex-wrap:wrap}}
 .vrow{display:grid;grid-template-columns:1fr auto;gap:6px;margin-bottom:6px}
@@ -198,6 +254,9 @@ td.s{text-align:center;white-space:nowrap}
   .scaler{position:static!important;transform:none!important}
   .sheet{box-shadow:none;height:1121px;page-break-after:avoid;break-after:avoid}
   .tabs{display:none}
+  .an-page+.an-page{margin-top:0}
+  .an-page{break-after:page;page-break-after:always}
+  .an-page:last-child{break-after:avoid;page-break-after:avoid}
   .ph{display:none}
   *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
 }
@@ -208,15 +267,20 @@ td.s{text-align:center;white-space:nowrap}
   <button type="button" data-tab="form" class="on">استمارة تبادل الزيارات بين المعلمين</button>
   <button type="button" data-tab="report">تقرير الزيارات التبادلية</button>
   <button type="button" data-tab="plc">جلسة مجتمع تعلم مهني</button>
+  <button type="button" data-tab="an">تحليل نتائج الاختبار</button>
+  <button type="button" data-tab="wait">تفعيل حصة الانتظار</button>
+  <button type="button" data-tab="plan">نموذج خطة علاجية</button>
+  <button type="button" data-tab="strat">تقرير تنفيذ استراتيجية تعليمية</button>
+  <button type="button" data-tab="init">تقرير تنفيذ مبادرة</button>
 </nav>
 <div class="app">
 
   <!-- ============ INPUT PANEL ============ -->
   <aside class="panel">
-    <h1>الزيارات التبادلية بين المعلمين</h1>
+    <h1>توثيق تقارير التطوير المهني</h1>
     <p class="sub">أدخل البيانات فقط وسيظهر النموذج مباشرة، ثم حمّله PDF.</p>
 
-    <details open>
+    <details>
       <summary>الإعدادات الثابتة: الترويسة والشعار والمدير (مشتركة بين النموذجين)</summary>
       <div class="sec">
         <div><label>أسطر الترويسة (كل سطر على حدة)</label><textarea id="hdrText" style="min-height:120px"></textarea></div>
@@ -428,6 +492,284 @@ td.s{text-align:center;white-space:nowrap}
         <summary>التوقيع</summary>
         <div class="sec"><div><label>المعلم المنفّذ (توقيع يمين)</label><input type="text" id="qHost"></div></div>
       </details>
+      <details>
+        <summary>الشواهد</summary>
+        <div class="sec"><div><label>صور الشواهد (حتى صورتين)</label>
+          <input type="file" id="qPhotos" accept="image/*" multiple>
+          <div class="thumbs" id="qThumbs" style="margin-top:6px"></div></div></div>
+      </details>
+    </div>
+
+    <div id="anInputs" hidden>
+      <details open>
+        <summary>بيانات الاختبار</summary>
+        <div class="sec">
+          <div class="row2">
+            <div><label>المادة</label><input type="text" id="aSubject" placeholder="الرياضيات"></div>
+            <div><label>الصف</label><input type="text" id="aGrade" placeholder="ثاني متوسط"></div>
+          </div>
+          <div class="row2">
+            <div><label>نوع الاختبار</label><input type="text" id="aType" list="dlExam"></div>
+            <div><label>درجة الاختبار</label><input type="text" id="aMax" inputmode="decimal"></div>
+          </div>
+          <datalist id="dlExam"><option>اختبار الفترة الأولى</option><option>اختبار الفترة الثانية</option><option>اختبار نهائي</option><option>اختبار قصير</option><option>اختبار تشخيصي</option><option>اختبار شهري</option></datalist>
+          <div><label>اسم المعلم (للتوقيع)</label><input type="text" id="aHost"></div>
+        </div>
+      </details>
+      <details open>
+        <summary>أسماء الطلاب ودرجاتهم</summary>
+        <div class="sec">
+          <div class="note">الصق القائمة هنا (من Excel أو غيره) أو اكتبها: كل طالب في سطر، الاسم ثم الدرجة (يُفصل بينهما بمسافة أو Tab أو فاصلة).</div>
+          <textarea id="aData" style="min-height:170px;font-family:inherit"></textarea>
+          <div id="aStatus" class="note"></div>
+          <div id="aWarn" class="warn"></div>
+          <div class="xg" style="margin-top:4px">إضافة طالب يدوياً</div>
+          <div class="addrow">
+            <input type="text" id="aName" placeholder="اسم الطالب">
+            <input type="text" id="aScore" placeholder="الدرجة" inputmode="decimal">
+            <button type="button" class="small" id="aAdd">إضافة</button>
+          </div>
+          <button type="button" class="small" id="aClear">مسح قائمة الطلاب</button>
+        </div>
+      </details>
+    </div>
+
+    <div id="wInputs" hidden>
+      <datalist id="dlPeriod"><option>الأولى</option><option>الثانية</option><option>الثالثة</option><option>الرابعة</option><option>الخامسة</option><option>السادسة</option><option>السابعة</option></datalist>
+      <datalist id="dlPlace"><option>غرفة المصادر</option><option>الفصل</option><option>المختبر</option><option>المسرح</option><option>الصالة الرياضية</option><option>الساحة</option><option>المكتبة</option></datalist>
+      <details open>
+        <summary>بيانات الحصة</summary>
+        <div class="sec">
+          <div class="row2">
+            <div><label>الحصة</label><input type="text" id="wPeriod" list="dlPeriod"></div>
+            <div><label>الصف / الفصل</label><input type="text" id="wGrade"></div>
+          </div>
+          <div class="row2">
+            <div><label>اليوم</label>
+              <select id="wDay"><option>الأحد</option><option>الاثنين</option><option>الثلاثاء</option><option>الأربعاء</option><option>الخميس</option></select></div>
+            <div><label>التاريخ (هجري)</label><input type="text" id="wDate" placeholder="12-12-1447"></div>
+          </div>
+          <button type="button" class="small" id="wTodayBtn">استخدم تاريخ اليوم</button>
+          <div class="row2">
+            <div><label>المادة الأساسية</label><input type="text" id="wMain"></div>
+            <div><label>المادة / النشاط المنفذ</label><input type="text" id="wActivity"></div>
+          </div>
+          <div><label>مكان التنفيذ</label><input type="text" id="wPlace" list="dlPlace"></div>
+        </div>
+      </details>
+      <details open>
+        <summary>وسائل التنفيذ</summary>
+        <div class="sec">
+          <div class="xg" style="margin-top:0">اختر المناسب <span id="wmCount" class="note"></span></div>
+          <div class="pick" id="wmPick"></div>
+          <div><label>وسائل أخرى من عندك (كل وسيلة في سطر)</label><textarea id="wmTxt" style="min-height:50px"></textarea></div>
+        </div>
+      </details>
+      <details open>
+        <summary>الهدف العام</summary>
+        <div class="sec">
+          <div class="xg" style="margin-top:0">اختر المناسب <span id="wgCount" class="note"></span></div>
+          <div class="pick" id="wgPick"></div>
+          <div><label>هدف آخر من عندك (كل هدف في سطر)</label><textarea id="wgTxt" style="min-height:50px"></textarea></div>
+        </div>
+      </details>
+      <details open>
+        <summary>وصف ما تم إنجازه بالحصة</summary>
+        <div class="sec">
+          <div class="xg" style="margin-top:0">اختر المناسب <span id="wdCount" class="note"></span></div>
+          <div class="pick" id="wdPick"></div>
+          <div><label>وصف آخر من عندك (كل وصف في سطر)</label><textarea id="wdTxt" style="min-height:60px"></textarea></div>
+        </div>
+      </details>
+      <details open>
+        <summary>ملاحظات / توصيات</summary>
+        <div class="sec">
+          <div class="xg" style="margin-top:0">اختر المناسب <span id="wnCount" class="note"></span></div>
+          <div class="pick" id="wnPick"></div>
+          <div><label>ملاحظات أخرى من عندك (كل ملاحظة في سطر)</label><textarea id="wnTxt" style="min-height:60px"></textarea></div>
+        </div>
+      </details>
+      <details>
+        <summary>الشواهد والتوقيع</summary>
+        <div class="sec">
+          <div><label>صور الشواهد (حتى صورتين)</label>
+            <input type="file" id="wPhotos" accept="image/*" multiple>
+            <div class="thumbs" id="wThumbs" style="margin-top:6px"></div></div>
+          <div><label>اسم المعلم</label><input type="text" id="wHost"></div>
+        </div>
+      </details>
+    </div>
+
+    <div id="iInputs" hidden>
+      <datalist id="dlIStyle"><option>التعلّم القائم على المشاريع</option><option>ورش عمل</option><option>أنشطة صفية ولا صفية</option><option>حملات توعوية</option><option>مسابقات</option><option>برامج تدريبية</option><option>زيارات ميدانية</option><option>لقاءات وندوات</option><option>معارض مدرسية</option></datalist>
+      <datalist id="dlIPlace"><option>مختبر الحاسب</option><option>المسرح المدرسي</option><option>الساحة المدرسية</option><option>المكتبة المدرسية</option><option>قاعة الاجتماعات</option><option>غرفة المصادر</option><option>الصالة الرياضية</option></datalist>
+      <datalist id="dlITarget"><option>طلاب المرحلة المتوسطة</option><option>طلاب المرحلة الابتدائية</option><option>طلاب المرحلة الثانوية</option><option>المعلمون</option><option>أولياء الأمور</option><option>جميع منسوبي المدرسة</option></datalist>
+      <details open>
+        <summary>اختيار المبادرة</summary>
+        <div class="sec">
+          <div><label>المبادرة (يظهر اسمها عنواناً للتقرير)</label>
+            <select id="iInit"></select></div>
+          <div id="iCustomWrap" hidden><label>اسم المبادرة</label><input type="text" id="iCustomName" placeholder="مثال: مبادرة ..."></div>
+        </div>
+      </details>
+      <details open>
+        <summary>بيانات المبادرة</summary>
+        <div class="sec">
+          <div class="row2">
+            <div><label>أسلوب التنفيذ</label><input type="text" id="iStyle" list="dlIStyle"></div>
+            <div><label>شعار المبادرة</label><input type="text" id="iSlogan"></div>
+          </div>
+          <div class="row2">
+            <div><label>عدد المستهدفين</label><input type="text" id="iCount" inputmode="numeric" placeholder="مثال: 120"></div>
+            <div><label>الوحدة</label>
+              <select id="iUnit"><option>طالباً</option><option>معلماً</option><option>مستفيداً</option><option>ولي أمر</option><option>فرداً</option></select></div>
+          </div>
+          <div class="row2">
+            <div><label>تاريخ التنفيذ</label><input type="text" id="iDate" placeholder="12 ربيع الآخر 1448"></div>
+            <div><label>مكان المبادرة</label><input type="text" id="iPlace" list="dlIPlace"></div>
+          </div>
+          <button type="button" class="small" id="iTodayBtn">استخدم تاريخ اليوم</button>
+          <div><label>الفئة المستهدفة</label><input type="text" id="iTarget" list="dlITarget"></div>
+        </div>
+      </details>
+      <details open>
+        <summary>فكرة المبادرة (الهدف العام) — كتابة يدوية</summary>
+        <div class="sec"><textarea id="iIdea" style="min-height:80px"></textarea></div>
+      </details>
+      <details open>
+        <summary>الأهداف</summary>
+        <div class="sec">
+          <div class="xg" style="margin-top:0">اختر المناسب <span class="note" id="icg"></span></div>
+          <div class="pick" id="ipg"></div>
+          <div><label>أهداف أخرى من عندك (كل هدف في سطر)</label><textarea id="itg" style="min-height:44px"></textarea></div>
+        </div>
+      </details>
+      <details>
+        <summary>مكونات المبادرة (آلية التنفيذ)</summary>
+        <div class="sec">
+          <div class="xg" style="margin-top:0">اختر المناسب <span class="note" id="icc"></span></div>
+          <div class="pick" id="ipc"></div>
+          <div><label>مكونات أخرى من عندك (كل مكوّن في سطر)</label><textarea id="itc" style="min-height:44px"></textarea></div>
+        </div>
+      </details>
+      <details>
+        <summary>الأنشطة</summary>
+        <div class="sec">
+          <div class="xg" style="margin-top:0">اختر المناسب <span class="note" id="ica"></span></div>
+          <div class="pick" id="ipa"></div>
+          <div><label>أنشطة أخرى من عندك (كل نشاط في سطر)</label><textarea id="ita" style="min-height:44px"></textarea></div>
+        </div>
+      </details>
+      <details>
+        <summary>مؤشرات النجاح (المخرجات المتوقعة)</summary>
+        <div class="sec">
+          <div class="xg" style="margin-top:0">اختر المناسب <span class="note" id="ick"></span></div>
+          <div class="pick" id="ipk"></div>
+          <div><label>مؤشرات أخرى من عندك (كل مؤشر في سطر)</label><textarea id="itk" style="min-height:44px"></textarea></div>
+        </div>
+      </details>
+      <details>
+        <summary>الشواهد والتوقيع</summary>
+        <div class="sec">
+          <div><label>صور الشواهد (حتى صورتين)</label>
+            <input type="file" id="iPhotos" accept="image/*" multiple>
+            <div class="thumbs" id="iThumbs" style="margin-top:6px"></div></div>
+          <div><label>اسم المعلم</label><input type="text" id="iHost"></div>
+        </div>
+      </details>
+    </div>
+
+    <div id="stInputs" hidden>
+      <datalist id="dlStrat"><option>التعلم المبني على حل المشكلات</option><option>التعلم التعاوني</option><option>العصف الذهني</option><option>لعب الأدوار</option><option>التعلم باللعب</option><option>الخرائط الذهنية</option><option>التعلم بالاكتشاف</option><option>الحوار والمناقشة</option><option>التعلم الذاتي</option><option>التعلم بالمشروعات</option><option>الفصل المقلوب</option><option>التعلم النشط</option><option>التدريس بالأقران</option><option>الاستقصاء</option><option>القصة</option><option>التعلم بالأنشطة</option><option>K-W-L (أعرف – أريد أن أعرف – تعلمت)</option></datalist>
+      <datalist id="dlStage"><option>الأول الابتدائي</option><option>الثاني الابتدائي</option><option>الثالث الابتدائي</option><option>الرابع الابتدائي</option><option>الخامس الابتدائي</option><option>السادس الابتدائي</option><option>الأول متوسط</option><option>الثاني متوسط</option><option>الثالث متوسط</option><option>الأول ثانوي</option><option>الثاني ثانوي</option><option>الثالث ثانوي</option></datalist>
+      <details open>
+        <summary>بيانات الاستراتيجية</summary>
+        <div class="sec">
+          <div><label>الاستراتيجية</label><input type="text" id="stStrategy" list="dlStrat"></div>
+          <div class="row2">
+            <div><label>المادة</label><input type="text" id="stSubject"></div>
+            <div><label>تاريخ التنفيذ (هجري)</label><input type="text" id="stDate" placeholder="12-12-1447"></div>
+          </div>
+          <button type="button" class="small" id="stTodayBtn">استخدم تاريخ اليوم</button>
+          <div class="row2">
+            <div><label>المرحلة الدراسية</label><input type="text" id="stStage" list="dlStage"></div>
+            <div><label>الصف / الفصل</label><input type="text" id="stGrade" placeholder="مثال: جميع الفصول"></div>
+          </div>
+          <div class="row2">
+            <div><label>عدد المستفيدين</label><input type="text" id="stCount" inputmode="numeric" placeholder="مثال: 30"></div>
+            <div><label>الدرس</label><input type="text" id="stLesson"></div>
+          </div>
+        </div>
+      </details>
+      <details open>
+        <summary>الأهداف</summary>
+        <div class="sec">
+          <div class="xg" style="margin-top:0">اختر المناسب <span id="stgCount" class="note"></span></div>
+          <div class="pick" id="stgPick"></div>
+          <div><label>أهداف أخرى من عندك (كل هدف في سطر)</label><textarea id="stgTxt" style="min-height:50px"></textarea></div>
+        </div>
+      </details>
+      <details open>
+        <summary>الأدوات والوسائل التعليمية</summary>
+        <div class="sec">
+          <div class="xg" style="margin-top:0">اختر المناسب <span id="sttCount" class="note"></span></div>
+          <div class="pick" id="sttPick"></div>
+          <div><label>أدوات أخرى من عندك (كل أداة في سطر)</label><textarea id="sttTxt" style="min-height:50px"></textarea></div>
+        </div>
+      </details>
+      <details>
+        <summary>الشواهد والتوقيع</summary>
+        <div class="sec">
+          <div><label>صور الشواهد (حتى صورتين)</label>
+            <input type="file" id="stPhotos" accept="image/*" multiple>
+            <div class="thumbs" id="stThumbs" style="margin-top:6px"></div></div>
+          <div><label>اسم المعلم</label><input type="text" id="stHost"></div>
+        </div>
+      </details>
+    </div>
+
+    <div id="plInputs" hidden>
+      <datalist id="dlRes"><option>ممتاز</option><option>جيد جداً</option><option>جيد</option><option>مقبول</option><option>تحسّن جزئي</option><option>لم يتحسن</option></datalist>
+      <details open>
+        <summary>بيانات الخطة</summary>
+        <div class="sec">
+          <div class="row2">
+            <div><label>الصف / الفصل</label><input type="text" id="pGrade"></div>
+            <div><label>المادة</label><input type="text" id="pSubject"></div>
+          </div>
+          <div class="row2">
+            <div><label>نتيجة التحسن</label><input type="text" id="pResult" list="dlRes"></div>
+            <div><label>فترة المتابعة</label><input type="text" id="pPeriod" placeholder="مثال: 1-10-1448هـ"></div>
+          </div>
+        </div>
+      </details>
+      <details>
+        <summary>ملاحظات</summary>
+        <div class="sec">
+          <div class="xg" style="margin-top:0">اختر المناسب <span id="pnCount" class="note"></span></div>
+          <div class="pick" id="pnPick"></div>
+          <div><label>ملاحظات أخرى من عندك (كل ملاحظة في سطر)</label><textarea id="pnTxt" style="min-height:50px"></textarea></div>
+        </div>
+      </details>
+      <details open>
+        <summary>الطلاب (نقاط الضعف والقوة والطرق العلاجية)</summary>
+        <div class="sec">
+          <div class="note">أضف الطلاب ثم افتح قائمة كل طالب واختر المناسب له. يمكنك لصق عدة أسماء دفعة واحدة (اسم في كل سطر).</div>
+          <div id="plStudents"></div>
+          <button type="button" class="small" id="plAdd">+ إضافة طالب</button>
+          <div><label>إضافة عدة أسماء دفعة واحدة</label><textarea id="plBulk" style="min-height:60px"></textarea>
+            <button type="button" class="small" id="plBulkAdd" style="margin-top:6px">إضافة الأسماء</button></div>
+        </div>
+      </details>
+      <details>
+        <summary>الشواهد والتوقيع</summary>
+        <div class="sec">
+          <div><label>صور الشواهد (حتى صورتين)</label>
+            <input type="file" id="pPhotos" accept="image/*" multiple>
+            <div class="thumbs" id="pThumbs" style="margin-top:6px"></div></div>
+          <div><label>اسم المعلم</label><input type="text" id="pHost"></div>
+        </div>
+      </details>
     </div>
 
     <div class="btns">
@@ -515,6 +857,113 @@ td.s{text-align:center;white-space:nowrap}
       </div></div>
     </div>
 
+    <div id="scaler8" class="scaler" hidden>
+      <div id="isheet" class="sheet"><div id="isheetIn" class="sheetIn">
+        <div class="hdr">
+          <div class="r" id="i_hdr"></div>
+          <div class="c" id="i_logo"></div>
+          <div class="l"><div id="i_year"></div><div id="i_term"></div></div>
+        </div>
+        <div class="titlebox" id="i_title">تقرير تنفيذ مبادرة</div>
+        <div class="body">
+          <div class="grid3" style="grid-template-columns:1fr 1fr 1fr">
+            <div class="field"><span>أسلوب التنفيذ</span><div id="i_style"></div></div>
+            <div class="field"><span>عدد المستهدفين</span><div id="i_count"></div></div>
+            <div class="field"><span>تاريخ التنفيذ</span><div id="i_date"></div></div>
+          </div>
+          <div class="grid3" style="grid-template-columns:1fr 1fr 1fr">
+            <div class="field"><span>شعار المبادرة</span><div id="i_slogan"></div></div>
+            <div class="field"><span>مكان المبادرة</span><div id="i_place"></div></div>
+            <div class="field"><span>الفئة المستهدفة</span><div id="i_target"></div></div>
+          </div>
+          <div class="box"><span>فكرة المبادرة (الهدف العام)</span><div class="wtxt" id="i_idea"></div></div>
+          <div class="grid2" style="gap:14px">
+            <div class="box"><span>الأهداف</span><div class="wtxt" id="i_goals"></div></div>
+            <div class="box"><span>مكونات المبادرة (آلية التنفيذ)</span><div class="wtxt" id="i_comps"></div></div>
+          </div>
+          <div class="grid2" style="gap:14px">
+            <div class="box"><span>الأنشطة</span><div class="wtxt" id="i_acts"></div></div>
+            <div class="box"><span>مؤشرات النجاح (المخرجات المتوقعة)</span><div class="wtxt" id="i_inds"></div></div>
+          </div>
+          <div class="evid" id="i_evid"></div>
+        </div>
+        <div class="sigs2">
+          <div id="i_host"></div>
+          <div id="i_principal"></div>
+        </div>
+        <div class="foot" id="i_foot"></div>
+      </div></div>
+    </div>
+
+    <div id="scaler7" class="scaler" hidden>
+      <div id="ssheet" class="sheet"><div id="ssheetIn" class="sheetIn">
+        <div class="hdr">
+          <div class="r" id="s_hdr"></div>
+          <div class="c" id="s_logo"></div>
+          <div class="l"><div id="s_year"></div><div id="s_term"></div></div>
+        </div>
+        <div class="titlebox">تقرير تنفيذ استراتيجية تعليمية</div>
+        <div class="body">
+          <div class="grid3" style="grid-template-columns:1fr 1fr 1fr">
+            <div class="field"><span>الاستراتيجية</span><div id="s_strategy"></div></div>
+            <div class="field"><span>المادة</span><div id="s_subject"></div></div>
+            <div class="field"><span>تاريخ التنفيذ</span><div id="s_date"></div></div>
+          </div>
+          <div class="grid3" style="grid-template-columns:1fr 1fr 1fr">
+            <div class="field"><span>المرحلة الدراسية</span><div id="s_stage"></div></div>
+            <div class="field"><span>الصف / الفصل</span><div id="s_grade"></div></div>
+            <div class="field"><span>عدد المستفيدين</span><div id="s_count"></div></div>
+          </div>
+          <div class="field"><span>الدرس</span><div id="s_lesson"></div></div>
+          <div class="box"><span>الأهداف</span><div class="wtxt" id="s_goals"></div></div>
+          <div class="box"><span>الأدوات والوسائل التعليمية</span><div class="means" id="s_tools"></div></div>
+          <div class="evid" id="s_evid"></div>
+        </div>
+        <div class="sigs2">
+          <div id="s_host"></div>
+          <div id="s_principal"></div>
+        </div>
+        <div class="foot" id="s_foot"></div>
+      </div></div>
+    </div>
+
+    <div id="scaler6" class="scaler" hidden><div id="plPages"></div></div>
+
+    <div id="scaler5" class="scaler" hidden>
+      <div id="wsheet" class="sheet"><div id="wsheetIn" class="sheetIn">
+        <div class="hdr">
+          <div class="r" id="w_hdr"></div>
+          <div class="c" id="w_logo"></div>
+          <div class="l"><div id="w_year"></div><div id="w_term"></div></div>
+        </div>
+        <div class="titlebox">تقرير تنفيذ حصة انتظار</div>
+        <div class="body">
+          <div class="grid3" style="grid-template-columns:1fr 1fr 1fr">
+            <div class="field"><span>الحصة</span><div id="w_period"></div></div>
+            <div class="field"><span>الصف / الفصل</span><div id="w_grade"></div></div>
+            <div class="field"><span>اليوم / التاريخ</span><div id="w_date"></div></div>
+          </div>
+          <div class="grid3" style="grid-template-columns:1fr 1fr 1fr">
+            <div class="field"><span>المادة الأساسية</span><div id="w_main"></div></div>
+            <div class="field"><span>المادة / النشاط المنفذ</span><div id="w_activity"></div></div>
+            <div class="field"><span>مكان التنفيذ</span><div id="w_place"></div></div>
+          </div>
+          <div class="box"><span>وسائل التنفيذ</span><div class="means" id="w_means"></div></div>
+          <div class="box"><span>الهدف العام</span><div class="wtxt" id="w_goal"></div></div>
+          <div class="box"><span>وصف ما تم إنجازه بالحصة</span><div class="wtxt" id="w_desc"></div></div>
+          <div class="box"><span>ملاحظات / توصيات</span><div class="wtxt" id="w_notes"></div></div>
+          <div class="evid" id="w_evid"></div>
+        </div>
+        <div class="sigs2">
+          <div id="w_host"></div>
+          <div id="w_principal"></div>
+        </div>
+        <div class="foot" id="w_foot"></div>
+      </div></div>
+    </div>
+
+    <div id="scaler4" class="scaler" hidden><div id="anPages"></div></div>
+
     <div id="scaler3" class="scaler" hidden>
       <div id="qsheet" class="sheet"><div id="qsheetIn" class="sheetIn">
         <div class="hdr">
@@ -547,6 +996,7 @@ td.s{text-align:center;white-space:nowrap}
             <div class="box"><span>التوصيات</span><div id="q_recs"></div></div>
           </div>
           <div class="att" id="q_att"></div>
+          <div class="evid" id="q_evid"></div>
         </div>
 
         <div class="sigs2">
@@ -992,18 +1442,41 @@ if(!Array.isArray(R.visitors) || !R.visitors.length) R.visitors=[''];
 if(R.goals===OLD_GOALS) R.goals='';
 R.goalSel = R.goalSel || {};
 let rphotos = [];
-const IDS = {form:['sheet','sheetIn','scaler'], report:['rsheet','rsheetIn','scaler2'], plc:['qsheet','qsheetIn','scaler3']};
+let wphotos = [];
+let pphotos = [];
+let stphotos = [];
+let qphotos = [];
+let iphotos = [];
+const IDS = {form:['sheet','sheetIn','scaler'], report:['rsheet','rsheetIn','scaler2'], plc:['qsheet','qsheetIn','scaler3'], wait:['wsheet','wsheetIn','scaler5'], strat:['ssheet','ssheetIn','scaler7'], init:['isheet','isheetIn','scaler8']};
 const _tab = load('vf_tab');
-let TAB = (_tab==='report' || _tab==='plc') ? _tab : 'form';
+let TAB = ['report','plc','an','wait','plan','strat','init'].includes(_tab) ? _tab : 'form';
+const AN_DEFAULT = {subject:'',grade:'',examType:'اختبار الفترة الأولى',max:'100',host:'',data:''};
+let AN = Object.assign({}, AN_DEFAULT, load('vf_an')||{});
+const W_DEFAULT = {period:'',grade:'',day:'الأحد',date:'',main:'',activity:'',place:'',meanSel:{},meanTxt:'',goalSel:{},goalTxt:'',descSel:{},descTxt:'',noteSel:{},noteTxt:'',host:''};
+let W = Object.assign({}, W_DEFAULT, load('vf_wait')||{});
+['meanSel','goalSel','descSel','noteSel'].forEach(k=>{ W[k]=W[k]||{}; });
+const IN_DEFAULT = {init:'',customName:'',style:'',count:'',unit:'طالباً',date:'',slogan:'',place:'',target:'',idea:'',host:'',sel:{},free:{}};
+let IN = Object.assign({}, IN_DEFAULT, load('vf_init')||{});
+IN.sel = IN.sel || {}; IN.free = IN.free || {};
+const ST_DEFAULT = {strategy:'',subject:'',date:'',stage:'',grade:'',count:'',lesson:'',goalSel:{},goalTxt:'',toolSel:{},toolTxt:'',host:''};
+let ST = Object.assign({}, ST_DEFAULT, load('vf_strat')||{});
+ST.goalSel = ST.goalSel || {}; ST.toolSel = ST.toolSel || {};
+const newStudent = (name='') => ({name, weak:{}, weakTxt:'', str:{}, strTxt:'', meth:{}, methTxt:''});
+const PL_DEFAULT = {grade:'',subject:'',result:'',period:'',host:'',noteSel:{},noteTxt:'',students:[newStudent()]};
+let PL = Object.assign({}, PL_DEFAULT, load('vf_plan')||{});
+PL.noteSel = PL.noteSel || {};
+if(!Array.isArray(PL.students) || !PL.students.length) PL.students=[newStudent()];
+PL.students = PL.students.map(s=>Object.assign(newStudent(), s));
 
 const PLC_DEFAULT = {num:'الجلسة الأولى',topic:'',tools:'التدريب المصغر',day:'الأحد',date:'',place:'صالة الاجتماعات بالمدرسة',count:'',target:'',next:'يحدد لاحقاً',
   intro:'عُقدت جلسة مجتمع التعلم المهني بحضور معلمي القسم لتبادل الخبرات وتطوير الممارسات الصفية، وفق الخطة المعتمدة للفصل الدراسي.',
   goalSel:{0:true,1:true,2:true,3:true}, goalTxt:'', discSel:{0:true,1:true,2:true,3:true}, discTxt:'',
   resSel:{0:true,1:true,2:true,3:true}, resTxt:'', recSel:{0:true,1:true,2:true,3:true}, recTxt:'',
-  attendees:['','','','','','','',''], host:''};
+  attendees:['','','','','',''], host:''};
 let Q = Object.assign({}, PLC_DEFAULT, load('vf_plc')||{});
 ['goalSel','discSel','resSel','recSel'].forEach(k=>{ Q[k]=Q[k]||{}; });
 if(!Array.isArray(Q.attendees) || !Q.attendees.length) Q.attendees=[''];
+if(Q.attendees.length>6 && Q.attendees.slice(6).every(n=>!String(n||'').trim())) Q.attendees=Q.attendees.slice(0,6);
 
 const $ = id => document.getElementById(id);
 const toAr = s => String(s||'').replace(/\d/g, d => '٠١٢٣٤٥٦٧٨٩'[d]);
@@ -1016,7 +1489,7 @@ function schoolName(){
 }
 function persist(){
   const a = store('vf_settings', SET);
-  const b = store('vf_visit', V) && store('vf_report', R) && store('vf_plc', Q) && store('vf_tab', TAB);
+  const b = store('vf_visit', V) && store('vf_report', R) && store('vf_plc', Q) && store('vf_an', AN) && store('vf_wait', W) && store('vf_plan', PL) && store('vf_strat', ST) && store('vf_init', IN) && store('vf_tab', TAB);
   const n = $('saveNote');
   n.className = 'note ' + ((a&&b&&storageOK)?'ok':'bad');
   n.textContent = (a&&b&&storageOK)
@@ -1325,6 +1798,494 @@ $('qAttBox').addEventListener('input', e=>{ if(e.target.dataset.a!==undefined){ 
 $('qAttBox').addEventListener('click', e=>{ if(e.target.dataset.arm!==undefined){ Q.attendees.splice(+e.target.dataset.arm,1); renderAttBox(); render(); } });
 $('qAttAdd').onclick = ()=>{ Q.attendees.push(''); renderAttBox(); render(); };
 
+/* ---------- test results analysis ---------- */
+const BANDS = [
+  {n:'ممتاز',   lo:90, hi:100,   rng:'90 - 100',    c:'#4cbf7a'},
+  {n:'جيد جداً', lo:80, hi:89.99,  rng:'80 - 89.99',  c:'#3bb5ad'},
+  {n:'جيد',     lo:70, hi:79.99,  rng:'70 - 79.99',  c:'#4a90d9'},
+  {n:'مقبول',   lo:50, hi:69.99,  rng:'50 - 69.99',  c:'#f0932b'},
+  {n:'ضعيف',    lo:0,  hi:49.99,  rng:'0 - 49.99',   c:'#e85d5d'}
+];
+const bandOf = pct => pct>=90?0 : pct>=80?1 : pct>=70?2 : pct>=50?3 : 4;
+const AR2EN = s => String(s).replace(/[٠-٩]/g,d=>'٠١٢٣٤٥٦٧٨٩'.indexOf(d)).replace(/[۰-۹]/g,d=>'۰۱۲۳۴۵۶۷۸۹'.indexOf(d)).replace(/٫/g,'.').replace(/٬/g,'');
+const isNum = s => /^-?\d+(\.\d+)?$/.test(s);
+function parseStudents(text, max){
+  const out=[], warns=[];
+  String(text).split(/\r?\n/).forEach((raw,idx)=>{
+    const line = AR2EN(raw).trim(); if(!line) return;
+    let parts;
+    if(line.includes('\t')) parts = line.split('\t').map(s=>s.trim()).filter(Boolean);
+    else if(/[,;،؛]/.test(line)) parts = line.split(/[,;،؛]/).map(s=>s.trim()).filter(Boolean);
+    else {
+      let m = line.match(/^(.*?)[\s\-–:=]*(-?\d+(?:\.\d+)?)\s*$/);
+      if(m && m[1].trim()) parts=[m[1].trim(), m[2]];
+      else { m = line.match(/^(-?\d+(?:\.\d+)?)[\s\-–:=]+(.+)$/); parts = m ? [m[2].trim(), m[1]] : [line]; }
+    }
+    parts = parts.map(s=>s.replace(/\s*\/\s*\d+(\.\d+)?$/, ''));
+    let score=null, si=-1;
+    for(let i=parts.length-1;i>=0;i--){ if(isNum(parts[i])){ score=parseFloat(parts[i]); si=i; break; } }
+    const name = parts.filter((p,i)=>i!==si && !isNum(p)).join(' ').trim();
+    if(score===null){ warns.push(`السطر ${toAr(idx+1)}: لا توجد درجة`); return; }
+    if(!name){ warns.push(`السطر ${toAr(idx+1)}: لا يوجد اسم`); return; }
+    if(score<0 || score>max){ warns.push(`السطر ${toAr(idx+1)} (${name}): الدرجة خارج النطاق ٠ – ${toAr(max)}`); return; }
+    out.push({name, score});
+  });
+  return {students:out, warns};
+}
+function analyse(students, max){
+  const n=students.length;
+  const scores=students.map(s=>s.score);
+  const sum=scores.reduce((a,b)=>a+b,0);
+  const mean = n? sum/n : 0;
+  const sorted=[...scores].sort((a,b)=>a-b);
+  const median = n ? (n%2? sorted[(n-1)/2] : (sorted[n/2-1]+sorted[n/2])/2) : 0;
+  const sd = n ? Math.sqrt(scores.reduce((a,b)=>a+(b-mean)*(b-mean),0)/n) : 0;
+  const counts=[0,0,0,0,0];
+  students.forEach(s=>{ counts[bandOf(s.score/max*100)]++; });
+  const ranked = students.map((s,i)=>({...s,i})).sort((a,b)=>b.score-a.score || a.i-b.i);
+  let prev=null, rank=0;
+  ranked.forEach((s,idx)=>{ if(s.score!==prev){ rank=idx+1; prev=s.score; } s.rank=rank; });
+  return {n,sum,mean,median,sd,min:n?sorted[0]:0,max:n?sorted[n-1]:0,counts,ranked};
+}
+const f1 = x => toAr((+x).toFixed(1)), f2 = x => toAr((+x).toFixed(2));
+const fs_ = x => toAr(String(+(+x).toFixed(2)));
+function splitRows(n){
+  const FULL=19, LAST=15, pages=[]; let left=n, start=0;
+  while(left>LAST){
+    const take = left<=FULL+LAST ? Math.max(left-LAST, Math.ceil(left/2)) : FULL;
+    pages.push([start,start+take]); start+=take; left-=take;
+  }
+  pages.push([start,start+left]);
+  return pages;
+}
+function hdrHtml(){
+  const lines = SET.hdrText.split('\n').filter(Boolean).map(s=>`<div${s.length<=36?' class="nw"':''}>${esc(s)}</div>`).join('');
+  return `<div class="hdr"><div class="r">${lines}</div><div class="c"><img src="${SET.logo || DEFAULT_LOGO}"></div>
+    <div class="l"><div>${SET.year ? 'العام الدراسي ' + toAr(SET.year) : ''}</div><div>${esc(SET.term)}</div></div></div>`;
+}
+function pieSvg(counts, total){
+  if(!total) return `<svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="50" fill="#e9ecef"/></svg>`;
+  const nz = counts.map((c,i)=>({c,i})).filter(o=>o.c>0);
+  if(nz.length===1) return `<svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="50" fill="${BANDS[nz[0].i].c}"/></svg>`;
+  let a0=-Math.PI/2, paths='';
+  nz.forEach(o=>{
+    const a1=a0+o.c/total*2*Math.PI, large=(a1-a0)>Math.PI?1:0;
+    const x0=50+50*Math.cos(a0), y0=50+50*Math.sin(a0), x1=50+50*Math.cos(a1), y1=50+50*Math.sin(a1);
+    paths+=`<path d="M50,50 L${x0.toFixed(3)},${y0.toFixed(3)} A50,50 0 ${large} 1 ${x1.toFixed(3)},${y1.toFixed(3)} Z" fill="${BANDS[o.i].c}"/>`;
+    a0=a1;
+  });
+  return `<svg viewBox="0 0 100 100">${paths}</svg>`;
+}
+function donutSvg(frac){
+  const C=2*Math.PI*48, f=Math.max(0,Math.min(1,frac));
+  return `<svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="48" fill="none" stroke="#e9ecef" stroke-width="14"/>
+    <circle cx="60" cy="60" r="48" fill="none" stroke="#3bb5ad" stroke-width="14" stroke-dasharray="${(f*C).toFixed(2)} ${C.toFixed(2)}" transform="rotate(-90 60 60)"/></svg>`;
+}
+function pageShell(inner, pageNo, total){
+  return `<div class="sheet an-page" id="anp${pageNo}"><div class="sheetIn">${hdrHtml()}
+    <div class="titlebox">تحليل نتائج اختبار مادة [${esc(AN.subject||'—')}]</div>
+    <div class="body">${inner}</div>
+    <div class="foot">${esc(schoolName())}<span class="pg">صفحة ${toAr(pageNo)} من ${toAr(total)}</span></div></div></div>`;
+}
+let anPageCount = 1;
+function renderAn(){
+  const max = parseFloat(AR2EN(AN.max)) > 0 ? parseFloat(AR2EN(AN.max)) : 100;
+  const {students, warns} = parseStudents(AN.data, max);
+  const A = analyse(students, max);
+  $('aStatus').textContent = A.n ? `✓ تمت قراءة ${toAr(A.n)} طالب/طالبة` : 'لم تُدخل أي درجات بعد';
+  $('aStatus').className = 'note ' + (A.n?'ok':'');
+  $('aWarn').innerHTML = warns.slice(0,4).map(esc).join('<br>') + (warns.length>4 ? `<br>… و${toAr(warns.length-4)} أسطر أخرى` : '');
+  const ps = splitRows(A.n);
+  const total = 1 + ps.length;
+  anPageCount = total;
+
+  /* page 1 */
+  const countsMax = Math.max(1, ...A.counts);
+  const bars = BANDS.map((b,i)=>`<div class="barrow"><span class="lb">${b.n}</span><span class="tr"><span class="bar" style="width:${A.counts[i]/countsMax*100}%;background:${b.c}"></span></span><span class="ct">${toAr(A.counts[i])}</span></div>`).join('');
+  const legend = BANDS.map(b=>`<span><i style="background:${b.c}"></i>${b.n}</span>`).join('');
+  const rows = BANDS.map((b,i)=>`<tr><td class="t" style="text-align:right;padding-right:26px"><span class="dot" style="background:${b.c}"></span>${b.n}</td><td class="t">${toAr(b.rng)}</td><td class="t">${toAr(A.counts[i])}</td><td class="t">${A.n?toAr((A.counts[i]/A.n*100).toFixed(1)):toAr('0.0')}٪</td></tr>`).join('');
+  const page1 = `
+    <div class="grid3" style="grid-template-columns:1fr 1fr 1fr">
+      <div class="field"><span>الصف</span><div>${esc(AN.grade)}</div></div>
+      <div class="field"><span>نوع الاختبار</span><div>${esc(AN.examType)}</div></div>
+      <div class="field"><span>درجة الاختبار</span><div>${toAr(AN.max)}</div></div>
+    </div>
+    <div style="display:grid;grid-template-columns:1.9fr 1fr;gap:14px">
+      <div class="box"><span>درجات الطلاب</span><div class="tiles">
+        <div class="tile"><b>${toAr(A.n)}</b><small>عدد الطلاب</small></div>
+        <div class="tile"><b>${f2(A.max)}</b><small>أعلى درجة</small></div>
+        <div class="tile"><b>${f2(A.min)}</b><small>أدنى درجة</small></div>
+        <div class="tile"><b>${f2(A.median)}</b><small>الوسيط</small></div>
+        <div class="tile"><b>${f2(A.sd)}</b><small>الانحراف المعياري</small></div>
+        <div class="tile"><b>${fs_(A.sum)}</b><small>المجموع</small></div></div></div>
+      <div class="box"><span>المتوسط الحسابي</span><div class="donutWrap">${donutSvg(A.mean/max)}<div class="donutTxt"><b>${f1(A.mean)}</b><small>من ${toAr(AN.max)}</small></div></div></div>
+    </div>
+    <div class="grid2" style="gap:14px">
+      <div class="box"><span>توزيع التقديرات</span><div style="width:140px;height:140px;margin:4px auto 0">${pieSvg(A.counts,A.n)}</div><div class="legend">${legend}</div></div>
+      <div class="box"><span>عدد الطلاب</span>${bars}</div>
+    </div>
+    <div class="box"><span>جدول التوزيع</span><table class="an-table"><tr><th style="width:30%">التقدير</th><th>النطاق</th><th>العدد</th><th>النسبة</th></tr>${rows}</table></div>`;
+  let html = pageShell(page1, 1, total);
+
+  /* student list pages */
+  ps.forEach(([a,b],pi)=>{
+    const last = pi===ps.length-1;
+    const body = A.ranked.slice(a,b).map(s=>{
+      const pct = s.score/max*100, bi=bandOf(pct), diff = A.mean>0 ? (s.score-A.mean)/A.mean*100 : 0;
+      let cmp;
+      if(Math.abs(diff)<0.05) cmp = `<div class="cmpA" style="color:#777">يساوي المتوسط</div>`;
+      else if(diff>0) cmp = `<div class="cmpA" style="color:#1fa65c">أعلى بـ ${toAr(diff.toFixed(1))}٪</div><div class="cmpS" style="color:#1fa65c">أعلى من المتوسط</div>`;
+      else cmp = `<div class="cmpA" style="color:#e04f4f">أقل بـ ${toAr(Math.abs(diff).toFixed(1))}٪</div><div class="cmpS" style="color:#f39c12">أقل من المتوسط</div>`;
+      return `<tr><td class="n"><span class="rk${s.rank<=3?' r'+s.rank:''}">${toAr(s.rank)}</span></td><td class="t">${esc(s.name)}</td><td class="t">${fs_(s.score)} / ${toAr(AN.max)}</td><td class="t">${toAr(pct.toFixed(1))}٪</td><td class="t"><span class="pill" style="background:${BANDS[bi].c}">${BANDS[bi].n}</span></td><td class="t">${cmp}</td></tr>`;
+    }).join('');
+    const empty = A.n ? '' : `<tr><td colspan="6" class="t" style="height:60px;color:#888">لم تُدخل بيانات الطلاب بعد</td></tr>`;
+    const tbl = `<div class="box"><span>قائمة الطلاب</span><table class="an-table"><tr><th style="width:70px">الترتيب</th><th>اسم الطالب</th><th style="width:96px">الدرجة</th><th style="width:96px">النسبة المئوية</th><th style="width:96px">التقدير</th><th style="width:130px">المقارنة مع المتوسط</th></tr>${body}${empty}</table></div>`;
+    const sig = last ? `<div class="grid2" style="gap:14px"><div class="box sg"><span>توقيع</span><div>المعلم / ${esc(AN.host||'')}</div></div><div class="box sg"><span>توقيع</span><div>مدير المدرسة / ${esc(SET.principal||'')}</div></div></div>` : '';
+    html += pageShell(tbl + sig, pi+2, total);
+  });
+  $('anPages').innerHTML = html;
+  const n=$('fitNote'); if(TAB==='an'){ n.className='note'; n.textContent = `عدد صفحات التقرير: ${toAr(total)}`; }
+}
+[['aSubject','subject'],['aGrade','grade'],['aType','examType'],['aMax','max'],['aHost','host'],['aData','data']].forEach(([id,k])=>{
+  $(id).value = AN[k];
+  $(id).addEventListener('input', ()=>{ AN[k]=$(id).value; render(); });
+});
+$('aAdd').onclick = ()=>{
+  const nm=$('aName').value.trim(), sc=$('aScore').value.trim(); if(!nm||!sc) return;
+  AN.data = (AN.data && !AN.data.endsWith('\n') ? AN.data+'\n' : AN.data) + nm + '\t' + sc + '\n';
+  $('aData').value = AN.data; $('aName').value=''; $('aScore').value=''; $('aName').focus(); render();
+};
+$('aScore').addEventListener('keydown', e=>{ if(e.key==='Enter'){ e.preventDefault(); $('aAdd').click(); } });
+$('aClear').onclick = ()=>{ if(!confirm('سيتم مسح قائمة الطلاب. هل تريد المتابعة؟')) return; AN.data=''; $('aData').value=''; render(); };
+
+/* ---------- waiting-period session ---------- */
+const W_MEANS = ['شرح درس','عرض مقطع فيديو','عرض باور بوينت','أوراق عمل','حوار ونقاش','أجهزة مختبر','أجهزة إلكترونية','أجهزة رياضية','ألعاب تفاعلية',
+  'بطاقات تعليمية','مجسمات ونماذج','السبورة التفاعلية','قراءة نص أو قصة','مسابقات وأنشطة جماعية','خرائط ذهنية','التعلّم التعاوني'];
+const W_GOALS = [
+  'استثمار وقت حصص الانتظار بزيادة التحصيل العلمي للطلاب',
+  'استثمار وقت حصة الانتظار في تعزيز المهارات الأساسية (القراءة والكتابة والحساب)',
+  'تنمية مهارات التفكير والتواصل لدى الطلاب من خلال أنشطة هادفة',
+  'تعزيز القيم والسلوكيات الإيجابية لدى الطلاب',
+  'مراجعة ما سبق دراسته وتثبيت التعلّم لدى الطلاب',
+  'معالجة جوانب الضعف لدى الطلاب وتقديم أنشطة علاجية',
+  'تقديم أنشطة إثرائية تنمّي مواهب الطلاب وقدراتهم',
+  'تنمية مهارات التعلّم الذاتي والبحث لدى الطلاب',
+  'تعزيز مهارات العمل الجماعي والتعاون بين الطلاب',
+  'ربط التعلّم بالحياة العملية من خلال مواقف وتطبيقات',
+  'توظيف التقنية والمصادر الرقمية في خدمة التعلّم',
+  'تحويل وقت الانتظار إلى بيئة تعلّم نشطة منضبطة'
+];
+const W_DESC = [
+  'تم عرض مقطع فيديو على الطلاب مع تزويدهم بورقة عمل، وطُلب منهم محاولة حل الورقة من المحتوى الذي عُرض بالفيديو، وعند الانتهاء من عرض المقطع وحل الورقة تمت مناقشتهم والتحاور معهم حول الإجابات.',
+  'تمت مراجعة أبرز مفردات الدرس السابق مع الطلاب عبر أسئلة شفهية، ثم تنفيذ نشاط تطبيقي لتثبيت المعلومات.',
+  'تم توزيع الطلاب على مجموعات وتكليفهم بنشاط تعاوني، ثم عرضت كل مجموعة ما توصلت إليه ونوقشت النتائج.',
+  'تم تنفيذ مسابقة تعليمية تفاعلية بين الطلاب حول موضوعات المادة، مع تعزيز المشاركين وتحفيزهم.',
+  'تم تكليف الطلاب بقراءة نص مناسب واستخراج أفكاره الرئيسة ومناقشتها، مع معالجة صعوبات القراءة لدى بعضهم.',
+  'تم تنفيذ نشاط عملي مرتبط بالمنهج تحت إشراف المعلم، ثم تدوين الملاحظات ومناقشتها مع الطلاب.',
+  'تم تقديم أنشطة علاجية للطلاب الذين يحتاجون إلى دعم، بالتزامن مع أنشطة إثرائية للطلاب المتميزين.',
+  'تم عرض تقديمي (باور بوينت) عن موضوع مرتبط بالمنهج، ثم ناقش الطلاب المحتوى وأجابوا عن أسئلة تقويمية.',
+  'تم تنفيذ ألعاب تفاعلية تنمّي مهارات التفكير والعمل الجماعي، مع تلخيص الفوائد المستخلصة منها.',
+  'تم حل تدريبات وأوراق عمل متنوعة على الدروس المقررة، ثم تصحيحها وتقديم تغذية راجعة فورية للطلاب.'
+];
+const W_NOTES = [
+  'كان الفصل ممتازاً من الناحية الانضباطية، كما أبدى الطلاب مستوى عالياً من الفهم والمبادرة بالمشاركة والنقاش حول المادة.',
+  'تفاعل الطلاب بشكل إيجابي مع النشاط المقدَّم وأنجزوا المهام المطلوبة في الوقت المحدد.',
+  'يوصى بتوفير مصادر وأنشطة جاهزة لحصص الانتظار لاستثمار الوقت بصورة أفضل.',
+  'يوصى بإعداد بنك أنشطة (إثرائية وعلاجية) يناسب مختلف المراحل والمواد.',
+  'يوصى بتوزيع حصص الانتظار على المعلمين بما يتناسب مع تخصصاتهم قدر الإمكان.',
+  'يوصى بتوفير الوسائل والتجهيزات اللازمة في غرفة المصادر لخدمة حصص الانتظار.',
+  'يوصى بمتابعة الطلاب الذين ظهر لديهم ضعف أثناء النشاط ومعالجته في الحصص القادمة.',
+  'يوصى بتعميم التجربة على بقية معلمي المدرسة للاستفادة منها.',
+  'تحقق الهدف من الحصة بنسبة عالية، ويُقترح تكرار النشاط مع صفوف أخرى.'
+];
+buildPick('wmPick', W_MEANS, 'meanSel', W);
+buildPick('wgPick', W_GOALS, 'goalSel', W);
+buildPick('wdPick', W_DESC, 'descSel', W);
+buildPick('wnPick', W_NOTES, 'noteSel', W);
+[['wPeriod','period'],['wGrade','grade'],['wDay','day'],['wDate','date'],['wMain','main'],['wActivity','activity'],['wPlace','place'],
+ ['wmTxt','meanTxt'],['wgTxt','goalTxt'],['wdTxt','descTxt'],['wnTxt','noteTxt'],['wHost','host']].forEach(([id,k])=>{
+  $(id).value = W[k];
+  $(id).addEventListener('input', ()=>{ W[k]=$(id).value; render(); });
+});
+$('wTodayBtn').onclick = ()=>{
+  const tp=todayParts(); W.date=tp.date;
+  if([...$('wDay').options].some(o=>o.value===tp.day)) W.day = tp.day;
+  $('wDate').value=W.date; $('wDay').value=W.day; render();
+};
+function wItems(list, sel, free){
+  return list.filter((_,i)=>sel[i]).concat(String(free).split('\n').map(s=>s.trim()).filter(Boolean));
+}
+function wText(items){
+  if(items.length===1) return `<div>${esc(items[0])}</div>`;
+  return items.map((s,i)=>`<div>${toAr(i+1)}. ${esc(s)}</div>`).join('');
+}
+function renderWait(){
+  $('w_period').textContent = W.period; $('w_grade').textContent = W.grade;
+  $('w_date').textContent = W.day + (W.date ? ' - ' + toAr(W.date) + 'هـ' : '');
+  $('w_main').textContent = W.main; $('w_activity').textContent = W.activity; $('w_place').textContent = W.place;
+  const m = wItems(W_MEANS, W.meanSel, W.meanTxt), g = wItems(W_GOALS, W.goalSel, W.goalTxt),
+        d = wItems(W_DESC, W.descSel, W.descTxt), n = wItems(W_NOTES, W.noteSel, W.noteTxt);
+  $('w_means').innerHTML = m.map(s=>`<span><i>✓</i>${esc(s)}</span>`).join('');
+  $('w_goal').innerHTML = wText(g); $('w_desc').innerHTML = wText(d); $('w_notes').innerHTML = wText(n);
+  [['wmCount',m],['wgCount',g],['wdCount',d],['wnCount',n]].forEach(([id,a])=>{ $(id).textContent = a.length ? `(المحدد: ${toAr(a.length)})` : ''; });
+  $('w_evid').innerHTML = wphotos.length ? `<h4>الشواهد</h4><div class="imgs">${wphotos.map(p=>`<img src="${p}">`).join('')}</div>` : '';
+  $('w_host').textContent = 'المعلم / ' + (W.host||'');
+  $('w_principal').textContent = 'مدير المدرسة / ' + (SET.principal||'');
+}
+
+/* ---------- initiative implementation report ---------- */
+const INITS = [{"name": "مبادرة الذكاء الاصطناعي في التعليم", "goals": ["تعريف الطلاب بمفهوم الذكاء الاصطناعي وتطبيقاته", "تدريب المعلمين على أدوات الذكاء الاصطناعي التعليمية", "تنمية مهارات التفكير الحاسوبي لدى الطلاب", "توظيف الأدوات الذكية في إثراء الدروس", "ترسيخ أخلاقيات الاستخدام الآمن", "تنمية المهارات الرقمية للطلاب وتعزيز تعلّمهم الذاتي", "دعم الطلاب ذوي الاحتياجات التعليمية بأدوات ذكية", "تشجيع الطلاب على الابتكار وإنتاج محتوى رقمي"], "comps": ["ورش تعريفية بأدوات الذكاء الاصطناعي التوليدي", "دليل إرشادي مبسّط للاستخدام الآمن والمسؤول", "مختبر رقمي لتجريب التطبيقات الذكية", "تدريب المعلمين على توظيف الأدوات صفياً", "مسابقة مدرسية لأفضل مشروع طلابي ذكي", "مجموعة معلمين رائدة لمتابعة التنفيذ"], "acts": ["ورشة عمل تطبيقية لتدريب المعلمين", "تحدي تصميم مشروع ذكي", "معرض لمشاريع الطلاب الرقمية المبتكرة", "جلسات توعية بأخلاقيات التقنية", "مسابقة أفضل استخدام تعليمي للأدوات", "حصص تطبيقية لاستخدام الأدوات الذكية في الدروس"], "inds": ["ارتفاع وعي الطلاب بتقنيات الذكاء الاصطناعي", "إنتاج مشاريع طلابية رقمية مبتكرة", "تحسّن مخرجات التعلّم في المواد", "تمكّن المعلمين من الأدوات الذكية", "التزام واضح بأخلاقيات الاستخدام الآمن", "ارتفاع نسبة مشاركة الطلاب في الأنشطة الرقمية"]}, {"name": "مبادرة تعزيز القراءة", "goals": ["غرس حب القراءة لدى الطلاب وتنمية عادة القراءة اليومية", "رفع مستوى الطلاب في مهارات القراءة والفهم القرائي", "إثراء الحصيلة اللغوية والمعرفية لدى الطلاب", "تفعيل دور المكتبة المدرسية ومصادر التعلم", "تشجيع الطلاب على تلخيص ما يقرؤونه ومناقشته", "إشراك أولياء الأمور في دعم القراءة المنزلية", "اكتشاف الطلاب المتميزين في القراءة والكتابة ورعايتهم"], "comps": ["ركن للقراءة في كل فصل", "سجل قراءة لكل طالب", "مكتبة متنقلة بين الفصول", "نادي القراءة المدرسي", "جدول قراءة أسبوعي ضمن الحصص", "مسابقة القارئ المتميز"], "acts": ["حصة قراءة حرة أسبوعية", "تحدي قراءة الكتب خلال الفصل", "مسابقة تلخيص كتاب", "زيارات منظمة للمكتبة المدرسية", "ركن «اقرأ لزميلك»", "معرض الكتاب المدرسي"], "inds": ["ارتفاع عدد الكتب المقروءة لكل طالب", "تحسّن مستوى الطلاب في اختبارات القراءة", "زيادة نسبة استعارة الكتب من المكتبة", "مشاركة عدد أكبر من الطلاب في مسابقات القراءة", "تحسّن الطلاقة والفهم القرائي لدى الطلاب", "ارتفاع مشاركة أولياء الأمور في القراءة المنزلية"]}, {"name": "مبادرة القيم والهوية الوطنية", "goals": ["تعزيز قيم الانتماء والولاء للوطن لدى الطلاب", "ترسيخ القيم الإسلامية والسلوكيات الإيجابية", "التعريف بتاريخ المملكة ومنجزاتها ورؤيتها", "تنمية الاعتزاز باللغة العربية والهوية الوطنية", "تعزيز قيم الاحترام والتسامح والتعاون", "إشراك الطلاب في الفعاليات والمناسبات الوطنية"], "comps": ["برنامج إذاعة مدرسية قيمية", "ركن الهوية الوطنية في المدرسة", "حصص قيمية ضمن الجدول الأسبوعي", "لجنة طلابية للقيم", "دليل السلوك الإيجابي"], "acts": ["احتفال بيوم التأسيس واليوم الوطني", "مسابقة معلومات عن تاريخ المملكة", "معرض للوحات وطنية", "مسرحية قصيرة ذات مغزى قيمي", "حملة «كلمتي مسؤولية»", "زيارة لمعلم تراثي"], "inds": ["التزام الطلاب بالسلوك الإيجابي", "انخفاض المخالفات السلوكية", "مشاركة واسعة في الفعاليات الوطنية", "ارتفاع معرفة الطلاب بتاريخ الوطن", "ظهور الاعتزاز بالهوية في أعمال الطلاب"]}, {"name": "مبادرة مدرسة صحية وآمنة", "goals": ["نشر الوعي الصحي والغذائي بين الطلاب", "تعزيز ممارسة النشاط البدني", "ترسيخ ثقافة السلامة والأمن في البيئة المدرسية", "التدريب على الإسعافات الأولية والإخلاء", "تشجيع العادات الصحية (النظافة والنوم والتغذية)", "متابعة الحالة الصحية للطلاب بالتنسيق مع الجهات الصحية"], "comps": ["فريق الصحة والسلامة المدرسي", "برنامج التغذية الصحية بالمقصف", "خطة الإخلاء والطوارئ", "ركن التوعية الصحية", "شراكة مع المركز الصحي"], "acts": ["حملة الفطور الصحي", "يوم رياضي مفتوح", "تمرين إخلاء تجريبي", "محاضرة صحية من المركز الصحي", "ورشة إسعافات أولية", "مسابقة أجمل لوحة توعوية"], "inds": ["ارتفاع وعي الطلاب بالعادات الصحية", "نجاح تمرين الإخلاء في الزمن المحدد", "زيادة مشاركة الطلاب في الأنشطة الرياضية", "انخفاض الحوادث داخل المدرسة", "تحسّن جودة المنتجات في المقصف"]}, {"name": "مبادرة رفع التحصيل الدراسي", "goals": ["رفع مستوى التحصيل الدراسي لدى الطلاب", "علاج جوانب الضعف في المهارات الأساسية", "دعم الطلاب المتفوقين ببرامج إثرائية", "تحليل نتائج الاختبارات واتخاذ القرارات المناسبة", "تفعيل أساليب التعلّم النشط", "تعزيز التعاون بين المعلمين وأولياء الأمور"], "comps": ["خطط علاجية وإثرائية للطلاب", "تحليل دوري لنتائج الاختبارات", "بنك أسئلة وأوراق عمل", "مجتمعات التعلم المهني للمعلمين", "برنامج التقوية بعد الحصص"], "acts": ["حصص تقوية علاجية", "اختبارات قصيرة تشخيصية", "برنامج الزميل الداعم", "ورشة تحليل نتائج الاختبارات", "تكريم الطلاب المتميزين والمتحسنين", "لقاء أولياء الأمور لعرض النتائج"], "inds": ["ارتفاع متوسط درجات الطلاب", "انخفاض نسبة الطلاب المتعثرين", "زيادة نسبة الطلاب المتفوقين", "تحسّن نتائج الاختبارات الدورية", "ارتفاع حضور أولياء الأمور للقاءات"]}, {"name": "مبادرة التطوع المدرسي", "goals": ["ترسيخ ثقافة العمل التطوعي لدى الطلاب", "تنمية روح المسؤولية المجتمعية", "إشراك الطلاب في خدمة المدرسة والمجتمع", "اكتشاف مهارات الطلاب وتوظيفها في أعمال تطوعية", "توثيق الساعات التطوعية للطلاب"], "comps": ["فريق التطوع الطلابي", "سجل الساعات التطوعية", "خطة سنوية للأعمال التطوعية", "شراكة مع جهات مجتمعية", "منصة التطوع المدرسي"], "acts": ["حملة تنظيف وتجميل المدرسة", "زيارة لدار رعاية المسنين أو الأيتام", "حملة جمع التبرعات الخيرية", "مبادرة الطالب المرشد للصفوف الأولى", "يوم التطوع المفتوح", "تكريم الطلاب المتطوعين"], "inds": ["ارتفاع عدد الطلاب المتطوعين", "زيادة الساعات التطوعية الموثقة", "تنفيذ الأعمال التطوعية المخطط لها كاملة", "رضا الجهات المستفيدة", "ارتفاع روح التعاون بين الطلاب"]}, {"name": "مبادرة تنمية المواهب والإبداع", "goals": ["اكتشاف المواهب والمبدعين ورعايتهم", "تنمية مهارات الإبداع والابتكار", "توفير بيئة مشجعة للمشاركة في المسابقات", "تعزيز ثقة الطلاب بقدراتهم", "ربط المواهب بالفعاليات المحلية والوطنية"], "comps": ["استبانة اكتشاف المواهب", "لجنة رعاية الموهوبين", "نادي الإبداع المدرسي", "حقيبة أنشطة إثرائية", "سجل إنجازات الطلاب الموهوبين"], "acts": ["معرض الإبداع المدرسي", "مسابقة الإلقاء والخطابة", "ورشة الرسم والفنون", "ملتقى المواهب الطلابي", "المشاركة في مسابقات موهبة", "ورشة ابتكار مشروع علمي"], "inds": ["ارتفاع عدد الطلاب الموهوبين المكتشفين", "زيادة المشاركات في المسابقات", "تحقيق مراكز متقدمة في المسابقات", "تنوّع الأعمال الإبداعية المنتَجة", "ارتفاع رضا الطلاب وأولياء الأمور"]}, {"name": "مبادرة البيئة المدرسية", "goals": ["ترسيخ ثقافة المحافظة على البيئة", "ترشيد استهلاك الماء والكهرباء والورق", "تعزيز مفهوم إعادة التدوير", "تجميل البيئة المدرسية بالتشجير", "إشراك الطلاب في حماية البيئة"], "comps": ["لجنة البيئة المدرسية", "حاويات فرز النفايات", "ركن التشجير والزراعة", "دليل ترشيد الاستهلاك", "برنامج الطالب الأخضر"], "acts": ["حملة تشجير المدرسة", "ورشة إعادة التدوير", "يوم البيئة المدرسي", "مسابقة أنظف فصل", "محاضرة توعوية عن ترشيد المياه", "تنفيذ حديقة مدرسية صغيرة"], "inds": ["انخفاض استهلاك الورق والمياه", "ارتفاع كمية المخلفات المعاد تدويرها", "زيادة المساحات الخضراء", "ارتفاع وعي الطلاب بقضايا البيئة", "التزام الفصول بالنظافة"]}];
+const INIT_GEN = {"goals": ["تحقيق الأهداف التربوية للمبادرة وفق الخطة", "رفع مستوى وعي الفئة المستهدفة بموضوع المبادرة", "تنمية المهارات والاتجاهات الإيجابية لدى المستفيدين", "تفعيل الشراكة بين المدرسة والمجتمع المحلي", "تشجيع المشاركة الفاعلة من الطلاب والمعلمين", "توثيق التجربة ونقلها بين المدارس"], "comps": ["لجنة لتنفيذ ومتابعة المبادرة", "خطة زمنية للتنفيذ", "مواد وأدوات داعمة", "دليل أو نشرة تعريفية", "آلية للتقويم والمتابعة"], "acts": ["ورش عمل", "لقاءات توعوية", "مسابقات وأنشطة تنافسية", "حملة تعريفية بالمبادرة", "معرض ختامي للإنجازات", "تكريم المشاركين المتميزين"], "inds": ["تحقق الأهداف المخطط لها", "مشاركة الفئة المستهدفة بنسبة عالية", "رضا المستفيدين عن المبادرة", "توثيق مخرجات المبادرة", "استمرارية أثر المبادرة"]};
+const IGROUPS = [['goals','ipg','itg','icg'],['comps','ipc','itc','icc'],['acts','ipa','ita','ica'],['inds','ipk','itk','ick']];
+const initCat = () => IN.init==='c' ? INIT_GEN : (IN.init!=='' && INITS[+IN.init]) ? INITS[+IN.init] : null;
+const initKey = () => IN.init===''?'_':String(IN.init);
+function initSel(){ const k=initKey(); IN.sel[k]=IN.sel[k]||{goals:{},comps:{},acts:{},inds:{}}; return IN.sel[k]; }
+function initFree(){ const k=initKey(); IN.free[k]=IN.free[k]||{goals:'',comps:'',acts:'',inds:''}; return IN.free[k]; }
+const initTitle = () => IN.init==='c' ? (IN.customName.trim()||'تقرير تنفيذ مبادرة') : (INITS[+IN.init] ? INITS[+IN.init].name : 'تقرير تنفيذ مبادرة');
+(function(){
+  const sel=$('iInit');
+  sel.innerHTML = '<option value="">— اختر المبادرة من القائمة —</option>' + INITS.map((x,i)=>`<option value="${i}">${esc(x.name)}</option>`).join('') + '<option value="c">مبادرة أخرى (أكتب اسمها)</option>';
+  sel.value = IN.init;
+  if(sel.value!==IN.init){ IN.init=''; sel.value=''; }
+})();
+function renderInitPicks(){
+  const cat=initCat(), S_=initSel(), F_=initFree();
+  $('iCustomWrap').hidden = IN.init!=='c';
+  IGROUPS.forEach(([k,pick,txt])=>{
+    const list = cat ? cat[k] : [];
+    $(pick).innerHTML = cat ? list.map((x,i)=>`<div class="xi"><label class="chk"><input type="checkbox" data-g="${k}" data-i="${i}" ${S_[k][i]?'checked':''}><span>${esc(x)}</span></label></div>`).join('')
+                            : '<div class="note" style="padding:8px">اختر المبادرة من القائمة أولاً لتظهر خياراتها.</div>';
+    $(txt).value = F_[k];
+  });
+}
+IGROUPS.forEach(([k,pick,txt])=>{
+  $(pick).addEventListener('change', e=>{
+    if(e.target.dataset.g===undefined) return;
+    const S_=initSel(), i=e.target.dataset.i;
+    if(e.target.checked) S_[k][i]=true; else delete S_[k][i];
+    render();
+  });
+  $(txt).addEventListener('input', ()=>{ initFree()[k]=$(txt).value; render(); });
+});
+$('iInit').addEventListener('change', ()=>{ IN.init=$('iInit').value; renderInitPicks(); render(); });
+[['iCustomName','customName'],['iStyle','style'],['iSlogan','slogan'],['iCount','count'],['iUnit','unit'],['iDate','date'],['iPlace','place'],['iTarget','target'],['iIdea','idea'],['iHost','host']].forEach(([id,k])=>{
+  $(id).value = IN[k];
+  $(id).addEventListener('input', ()=>{ IN[k]=$(id).value; render(); });
+});
+$('iTodayBtn').onclick = ()=>{
+  let txt='';
+  try{
+    const parts = new Intl.DateTimeFormat('ar-SA-u-ca-islamic-umalqura-nu-latn',{day:'numeric',month:'long',year:'numeric'}).formatToParts(new Date());
+    const g = ty => (parts.find(x=>x.type===ty)||{}).value;
+    if(g('day') && g('month') && g('year')) txt = `${g('day')} ${g('month')} ${g('year')}`;
+  }catch(e){}
+  if(!txt){ txt = todayParts().date; }
+  IN.date = txt; $('iDate').value = txt; render();
+};
+function initList(k, bullet){
+  const cat=initCat(); const S_=initSel(), F_=initFree();
+  const items = (cat?cat[k]:[]).filter((_,i)=>S_[k][i]).concat(String(F_[k]).split('\n').map(s=>s.trim()).filter(Boolean));
+  return {items, html: items.map((s,i)=> bullet ? `<div>• ${esc(s)}</div>` : `<div>${toAr(i+1)}) ${esc(s)}</div>`).join('')};
+}
+function renderInit(){
+  $('i_title').textContent = initTitle();
+  $('i_style').textContent = IN.style; $('i_slogan').textContent = IN.slogan; $('i_place').textContent = IN.place; $('i_target').textContent = IN.target;
+  const c = AR2EN(IN.count).trim();
+  $('i_count').textContent = /^\d+$/.test(c) ? `${toAr(c)} ${IN.unit}` : IN.count;
+  let dv = toAr(IN.date.trim()); if(dv && !/هـ|ه$/.test(dv)) dv += 'هـ';
+  $('i_date').textContent = dv;
+  $('i_idea').innerHTML = IN.idea.trim() ? `<div>${esc(IN.idea.trim()).replace(/\n/g,'<br>')}</div>` : '';
+  const gs = initList('goals',false), cs = initList('comps',true), as = initList('acts',true), ks = initList('inds',true);
+  $('i_goals').innerHTML = gs.html; $('i_comps').innerHTML = cs.html; $('i_acts').innerHTML = as.html; $('i_inds').innerHTML = ks.html;
+  [['icg',gs],['icc',cs],['ica',as],['ick',ks]].forEach(([id,o])=>{ $(id).textContent = o.items.length ? `(المحدد: ${toAr(o.items.length)})` : ''; });
+  $('i_evid').innerHTML = iphotos.length ? `<h4>الشواهد</h4><div class="imgs">${iphotos.map(p=>`<img src="${p}">`).join('')}</div>` : '';
+  $('i_host').textContent = 'المعلم / ' + (IN.host||'');
+  $('i_principal').textContent = 'مدير المدرسة / ' + (SET.principal||'');
+}
+renderInitPicks();
+
+/* ---------- strategy implementation report ---------- */
+const ST_GOALS = [
+  'تنمية مهارة التفكير الناقد عند الطلاب',
+  'ربط محتوى الدرس بموقف واقعي يعيشه الطالب',
+  'نقل الطالب من متلقٍّ للمعلومة إلى منتج لها',
+  'تدريب الطلاب على العمل ضمن مجموعة واحدة',
+  'قياس أثر الاستراتيجية في فهم الدرس',
+  'تنمية مهارات التواصل والحوار لدى الطلاب',
+  'زيادة دافعية الطلاب ومشاركتهم الفاعلة في الدرس',
+  'تنمية مهارات حل المشكلات واتخاذ القرار',
+  'تنمية الإبداع والتفكير الابتكاري لدى الطلاب',
+  'مراعاة الفروق الفردية وتنويع أساليب التعلّم',
+  'تعزيز التعلّم الذاتي وتحمّل المسؤولية لدى الطالب',
+  'تنمية مهارات البحث والاستقصاء',
+  'تعزيز الثقة بالنفس لدى الطلاب',
+  'تحقيق أهداف الدرس بصورة أعمق وأطول أثراً',
+  'ربط التعلّم بالحياة وتطبيقه عملياً',
+  'توظيف مهارات القرن الحادي والعشرين (التعاون والتواصل والتفكير)'
+];
+const ST_TOOLS = ['جهاز عرض','جهاز حاسب','صور توضيحية','كتاب','أدوات رياضية','سبورة تقليدية','سبورة ذكية','بطاقات تعليمية','أوراق عمل','عرض تقديمي',
+  'مقاطع فيديو','مجسمات ونماذج','ألعاب تعليمية','أدوات مختبر','خرائط ومخططات','أقلام وألوان وورق ملون','لوحات حائط','تطبيقات وبرامج تعليمية','منصة مدرستي','أجهزة لوحية'];
+buildPick('stgPick', ST_GOALS, 'goalSel', ST);
+buildPick('sttPick', ST_TOOLS, 'toolSel', ST);
+[['stStrategy','strategy'],['stSubject','subject'],['stDate','date'],['stStage','stage'],['stGrade','grade'],['stCount','count'],['stLesson','lesson'],['stgTxt','goalTxt'],['sttTxt','toolTxt'],['stHost','host']].forEach(([id,k])=>{
+  $(id).value = ST[k];
+  $(id).addEventListener('input', ()=>{ ST[k]=$(id).value; render(); });
+});
+$('stTodayBtn').onclick = ()=>{ ST.date=todayParts().date; $('stDate').value=ST.date; render(); };
+function renderStrat(){
+  $('s_strategy').textContent = ST.strategy; $('s_subject').textContent = ST.subject;
+  $('s_date').textContent = ST.date ? toAr(ST.date) + 'هـ' : '';
+  $('s_stage').textContent = ST.stage; $('s_grade').textContent = ST.grade;
+  const c = AR2EN(ST.count).trim();
+  $('s_count').textContent = /^\d+$/.test(c) ? toAr(c) + (+c===1 ? ' طالب' : ' طالباً') : ST.count;
+  $('s_lesson').textContent = ST.lesson;
+  const g = wItems(ST_GOALS, ST.goalSel, ST.goalTxt), tl = wItems(ST_TOOLS, ST.toolSel, ST.toolTxt);
+  $('s_goals').innerHTML = g.map((s,i)=>`<div>${toAr(i+1)}. ${esc(s)}</div>`).join('');
+  $('s_tools').innerHTML = tl.map(s=>`<span><i>✓</i>${esc(s)}</span>`).join('');
+  $('stgCount').textContent = g.length ? `(المحدد: ${toAr(g.length)})` : '';
+  $('sttCount').textContent = tl.length ? `(المحدد: ${toAr(tl.length)})` : '';
+  $('s_evid').innerHTML = stphotos.length ? `<h4>الشواهد</h4><div class="imgs">${stphotos.map(p=>`<img src="${p}">`).join('')}</div>` : '';
+  $('s_host').textContent = 'المعلم / ' + (ST.host||'');
+  $('s_principal').textContent = 'مدير المدرسة / ' + (SET.principal||'');
+}
+
+/* ---------- remedial plan ---------- */
+const PL_WEAK = [
+  'ضعف في مهارة القراءة','ضعف في مهارة الكتابة والإملاء','ضعف في العمليات الحسابية الأساسية','صعوبة في فهم المقروء واستيعاب النصوص',
+  'ضعف في حل المسائل اللفظية','ضعف في استيعاب المفاهيم والقواعد الأساسية','ضعف التركيز وقلة الانتباه أثناء الشرح','قلة المشاركة الصفية',
+  'ضعف المستوى التحصيلي','كثرة الغياب أو التأخر عن الحصص','إهمال الواجبات المنزلية','ضعف مهارات التفكير والاستنتاج',
+  'ضعف في التعبير الشفهي والكتابي','ضعف الدافعية نحو التعلّم','ضعف في الاحتفاظ بالمعلومات وتذكرها','ضعف في تنظيم الدفتر والأدوات'
+];
+const PL_STR = [
+  'الالتزام بالحضور والانضباط الصفي','حب الاستطلاع والرغبة في التعلّم','مهارات جيدة في التواصل الشفهي','التفاعل مع الأنشطة العملية والتطبيقية',
+  'التعاون مع زملائه واحترامهم','مهارة جيدة في الرسم والأعمال اليدوية','قدرة جيدة على الحفظ والتذكر','الاستجابة للتوجيه وتقبّل التغذية الراجعة',
+  'ارتفاع الدافعية عند التعزيز والتحفيز','مهارات جيدة في استخدام التقنية','المبادرة بالمشاركة عند التشجيع','حسن الخلق واحترام المعلمين',
+  'التعلّم الجيد بالوسائل البصرية والسمعية','القدرة على العمل ضمن مجموعة'
+];
+const PL_METH = [
+  'أوراق عمل إضافية','التشجيع على المشاركة','تنويع الأسئلة وأساليب التقويم','استخدام التعزيز','دروس علاجية فردية خارج وقت الحصة',
+  'التعلّم بالأقران (مساندة طالب متفوق)','توظيف الوسائل الحسية والبصرية والألعاب التعليمية','تجزئة المهارة إلى خطوات صغيرة وتدريب متدرّج',
+  'تدريب يومي مكثف على المهارة بتمارين قصيرة','مجموعات تقوية صغيرة داخل الصف','استخدام التقنية والتطبيقات التعليمية',
+  'اختبارات قصيرة متكررة لقياس التقدم','إسناد مهام قيادية بسيطة لتعزيز الثقة','تعديل أساليب التدريس وفق نمط تعلّم الطالب','متابعة دورية وتوثيق مستوى التقدم'
+];
+const PL_NOTES = [
+  'تُتابَع الخطة أسبوعياً لكل طالب على حدة، ويُرصد أثرها في درجات التقويم القصير وفي المشاركة الصفية والالتزام بالواجبات. وما لم يتحسّن مستوى الطالب بعد أربعة أسابيع تُراجَع خطته وتُبدَّل أساليبها، ويُبلَّغ ولي الأمر بما تحقّق.',
+  'يُقوَّم الطلاب في نهاية مدة الخطة بأدوات متنوعة لقياس أثر العلاج.',
+  'يتم التنسيق مع ولي الأمر لمتابعة الطالب في المنزل وتعزيز ما تم تنفيذه في المدرسة.',
+  'تُنفَّذ الخطة داخل الحصص وفي حصص الانتظار والفترات المناسبة.',
+  'يُعاد تقييم مستوى الطلاب في نهاية فترة المتابعة ويُعدَّل البرنامج العلاجي وفق النتائج.'
+];
+const PL_KINDS = [['weak','weakTxt','نقاط الضعف',PL_WEAK],['str','strTxt','نقاط القوة',PL_STR],['meth','methTxt','الطرق العلاجية',PL_METH]];
+function plItems(s,kind){ const k=PL_KINDS.find(x=>x[0]===kind); return k[3].filter((_,i)=>s[kind][i]).concat(String(s[k[1]]).split('\n').map(x=>x.trim()).filter(Boolean)); }
+buildPick('pnPick', PL_NOTES, 'noteSel', PL);
+function renderPlStudents(){
+  $('plStudents').innerHTML = PL.students.map((s,si)=>`<div class="stu" data-s="${si}">
+    <div class="stuHead"><input type="text" data-f="name" value="${esc(s.name)}" placeholder="اسم الطالب ${toAr(si+1)}">
+      ${si>0?`<button type="button" class="cp" data-cp="${si}">نسخ اختيارات السابق</button>`:'<span></span>'}
+      ${PL.students.length>1?`<button type="button" class="dl" data-del="${si}">حذف</button>`:'<span></span>'}</div>
+    ${PL_KINDS.map(([k,tk,title,list])=>`<details><summary>${title} <span class="cnt" data-c="${si}-${k}"></span></summary>
+      <div class="pick">${list.map((x,i)=>`<div class="xi"><label class="chk"><input type="checkbox" data-k="${k}" data-i="${i}" ${s[k][i]?'checked':''}><span>${esc(x)}</span></label></div>`).join('')}</div>
+      <textarea data-f="${tk}" placeholder="إضافة أخرى (كل بند في سطر)">${esc(s[tk])}</textarea></details>`).join('')}
+  </div>`).join('');
+}
+const plBox = $('plStudents');
+plBox.addEventListener('input', e=>{
+  const card=e.target.closest('.stu'); if(!card||!e.target.dataset.f) return;
+  PL.students[+card.dataset.s][e.target.dataset.f]=e.target.value; render();
+});
+plBox.addEventListener('change', e=>{
+  const card=e.target.closest('.stu'); if(!card||e.target.dataset.k===undefined) return;
+  const s=PL.students[+card.dataset.s], k=e.target.dataset.k, i=e.target.dataset.i;
+  if(e.target.checked) s[k][i]=true; else delete s[k][i];
+  render();
+});
+plBox.addEventListener('click', e=>{
+  const b=e.target;
+  if(b.dataset.del!==undefined){ if(confirm('حذف هذا الطالب من الخطة؟')){ PL.students.splice(+b.dataset.del,1); renderPlStudents(); render(); } }
+  if(b.dataset.cp!==undefined){
+    const i=+b.dataset.cp, prev=PL.students[i-1], cur=PL.students[i];
+    ['weak','str','meth'].forEach(k=>{ cur[k]=Object.assign({},prev[k]); });
+    ['weakTxt','strTxt','methTxt'].forEach(k=>{ cur[k]=prev[k]; });
+    renderPlStudents(); render();
+  }
+});
+$('plAdd').onclick = ()=>{ PL.students.push(newStudent()); renderPlStudents(); render(); };
+$('plBulkAdd').onclick = ()=>{
+  const names = $('plBulk').value.split(/\r?\n/).map(s=>s.trim()).filter(Boolean);
+  if(!names.length) return;
+  const f=PL.students[0];
+  if(PL.students.length===1 && !f.name && PL_KINDS.every(([k])=>!plItems(f,k).length)) PL.students=[];
+  names.forEach(n=>PL.students.push(newStudent(n)));
+  $('plBulk').value=''; renderPlStudents(); render();
+};
+[['pGrade','grade'],['pSubject','subject'],['pResult','result'],['pPeriod','period'],['pnTxt','noteTxt'],['pHost','host']].forEach(([id,k])=>{
+  $(id).value = PL[k];
+  $(id).addEventListener('input', ()=>{ PL[k]=$(id).value; render(); });
+});
+function plCell(items){ return items.length ? items.map(x=>`<div class="pl"><i class="ck">✓</i> ${esc(x)}</div>`).join('') : '<div class="pl" style="color:#999;text-align:center">—</div>'; }
+function plRowHtml(s,idx){
+  return `<tr><td class="n">${toAr(idx+1)}</td><td class="nm">${esc(s.name||'—')}</td>${PL_KINDS.map(([k])=>`<td>${plCell(plItems(s,k))}</td>`).join('')}</tr>`;
+}
+const PL_HEAD = '<tr><th style="width:30px">#</th><th style="width:100px">اسم الطالب</th><th>نقاط الضعف</th><th>نقاط القوة</th><th>الطرق العلاجية</th></tr>';
+function plEstimate(s){
+  const lines = k => plItems(s,k).reduce((a,x)=>a+Math.max(1,Math.ceil((x.length+2)/38)),0) || 1;
+  const nameLines = Math.max(1, Math.ceil((s.name||'—').length/12));
+  return Math.max(Math.max(...PL_KINDS.map(([k])=>lines(k)))*17, nameLines*20) + 12;
+}
+function plHeights(){
+  const host=document.createElement('div'); host.className='box';
+  host.style.cssText='position:absolute;left:-10000px;top:0;width:726px;visibility:hidden';
+  host.innerHTML = `<table class="an-table plan-table">${PL_HEAD}${PL.students.map(plRowHtml).join('')}</table>`;
+  document.body.appendChild(host);
+  const hs = [...host.querySelectorAll('tr')].slice(1).map(tr=>tr.getBoundingClientRect().height);
+  host.remove();
+  const ok = hs.length && hs.every(h=>h>0);
+  return PL.students.map((s,i)=> ok ? hs[i] : plEstimate(s));
+}
+const PL_CAP_BASE_FIRST = 740, PL_CAP_NEXT = 830, PL_SIG = 95, PL_EVID = 225;
+function plNotes(){ return PL_NOTES.filter((_,i)=>PL.noteSel[i]).concat(String(PL.noteTxt).split('\n').map(s=>s.trim()).filter(Boolean)); }
+function renderPlan(){
+  PL_KINDS.forEach(([k])=>{ PL.students.forEach((s,si)=>{ const el=document.querySelector(`[data-c="${si}-${k}"]`); if(el){ const n=plItems(s,k).length; el.textContent = n?`(${toAr(n)})`:''; } }); });
+  const notes = plNotes();
+  $('pnCount').textContent = notes.length ? `(المحدد: ${toAr(notes.length)})` : '';
+  const notesH = notes.length ? 34 + notes.reduce((a,x)=>a+Math.max(1,Math.ceil(x.length/100))*24,0) : 0;
+  const capFirst = PL_CAP_BASE_FIRST - notesH;
+  const hs = plHeights();
+  const pages=[]; let cur=[], used=0, cap=capFirst;
+  PL.students.forEach((s,i)=>{
+    if(cur.length && used+hs[i]>cap){ pages.push(cur); cur=[]; used=0; cap=PL_CAP_NEXT; }
+    cur.push(i); used+=hs[i];
+  });
+  pages.push(cur);
+  const tail = PL_SIG + (pphotos.length?PL_EVID:0);
+  const tailOwn = used + tail > cap;
+  const total = pages.length + (tailOwn?1:0);
+  const evid = pphotos.length ? `<div class="evid"><h4>الشواهد</h4><div class="imgs">${pphotos.map(p=>`<img src="${p}">`).join('')}</div></div>` : '';
+  const sigs = `<div class="sigs2"><div>المعلم / ${esc(PL.host||'')}</div><div>مدير المدرسة / ${esc(SET.principal||'')}</div></div>`;
+  let html='';
+  pages.forEach((idxs,pi)=>{
+    const first = pi===0, isLast = pi===pages.length-1 && !tailOwn;
+    const info = first ? `<div class="grid4">
+      <div class="field"><span>الصف / الفصل</span><div>${esc(PL.grade)}</div></div>
+      <div class="field"><span>المادة</span><div>${esc(PL.subject)}</div></div>
+      <div class="field"><span>نتيجة التحسن</span><div>${esc(PL.result)}</div></div>
+      <div class="field"><span>فترة المتابعة</span><div>${esc(PL.period)}</div></div></div>
+      ${notes.length ? `<div class="box"><span>ملاحظات</span><div class="wtxt">${notes.length===1?`<div>${esc(notes[0])}</div>`:notes.map((x,i)=>`<div>${toAr(i+1)}. ${esc(x)}</div>`).join('')}</div></div>` : ''}` : '';
+    const heading = `<div class="plh">الخطة العلاجية لكل طالب - المجموع (${toAr(PL.students.length)})${pages.length>1?` — تابع`:''}</div>`.replace(' — تابع', first?'':' (تابع)');
+    const tbl = `${heading}<table class="an-table plan-table">${PL_HEAD}${idxs.map(i=>plRowHtml(PL.students[i],i)).join('')}</table>`;
+    html += planShell(info+tbl+(isLast?evid:''), isLast?sigs:'', pi+1, total);
+  });
+  if(tailOwn) html += planShell(evid, sigs, total, total);
+  $('plPages').innerHTML = html;
+  if(TAB==='plan'){ const n=$('fitNote'); n.className='note'; n.textContent=`عدد صفحات الخطة: ${toAr(total)}`; }
+}
+function planShell(inner, sigs, no, total){
+  return `<div class="sheet an-page" id="plp${no}"><div class="sheetIn">${hdrHtml()}
+    <div class="titlebox">خطة علاجية جماعية</div>
+    <div class="body">${inner}</div>${sigs}
+    <div class="foot">${esc(schoolName())}<span class="pg">صفحة ${toAr(no)} من ${toAr(total)}</span></div></div></div>`;
+}
+
 /* ---------- shared settings export / import ---------- */
 $('setExport').onclick = ()=> saveBlob(new Blob([JSON.stringify(SET)],{type:'application/json'}), 'إعدادات-الاستمارات.json');
 $('setImportBtn').onclick = ()=> $('setImport').click();
@@ -1367,6 +2328,39 @@ $('rPhotos').addEventListener('change', async e=>{
   rphotos = await Promise.all(files.map(async f=>shrink(await readDataURL(f), 1200, 'image/jpeg', 0.85)));
   renderThumbs(); render();
 });
+$('wPhotos').addEventListener('change', async e=>{
+  const all=[...e.target.files]; const files=all.slice(0,2);
+  if(all.length>2) say('تم اختيار أول صورتين فقط (الحد الأقصى صورتان).', true);
+  wphotos = await Promise.all(files.map(async f=>shrink(await readDataURL(f), 1200, 'image/jpeg', 0.85)));
+  renderThumbs(); render();
+});
+$('iPhotos').addEventListener('change', async e=>{
+  const all=[...e.target.files]; const files=all.slice(0,2);
+  if(all.length>2) say('تم اختيار أول صورتين فقط (الحد الأقصى صورتان).', true);
+  iphotos = await Promise.all(files.map(async f=>shrink(await readDataURL(f), 1200, 'image/jpeg', 0.85)));
+  renderThumbs(); render();
+});
+$('qPhotos').addEventListener('change', async e=>{
+  const all=[...e.target.files]; const files=all.slice(0,2);
+  if(all.length>2) say('تم اختيار أول صورتين فقط (الحد الأقصى صورتان).', true);
+  qphotos = await Promise.all(files.map(async f=>shrink(await readDataURL(f), 1200, 'image/jpeg', 0.85)));
+  renderThumbs(); render();
+});
+$('qThumbs').addEventListener('click', e=>{
+  if(e.target.dataset.rm!==undefined){ qphotos.splice(+e.target.dataset.rm,1); renderThumbs(); render(); }
+});
+$('stPhotos').addEventListener('change', async e=>{
+  const all=[...e.target.files]; const files=all.slice(0,2);
+  if(all.length>2) say('تم اختيار أول صورتين فقط (الحد الأقصى صورتان).', true);
+  stphotos = await Promise.all(files.map(async f=>shrink(await readDataURL(f), 1200, 'image/jpeg', 0.85)));
+  renderThumbs(); render();
+});
+$('pPhotos').addEventListener('change', async e=>{
+  const all=[...e.target.files]; const files=all.slice(0,2);
+  if(all.length>2) say('تم اختيار أول صورتين فقط (الحد الأقصى صورتان).', true);
+  pphotos = await Promise.all(files.map(async f=>shrink(await readDataURL(f), 1200, 'image/jpeg', 0.85)));
+  renderThumbs(); render();
+});
 $('logo').addEventListener('change', async e=>{
   const f = e.target.files[0]; if(!f) return;
   SET.logo = await shrink(await readDataURL(f), 420, 'image/png');
@@ -1376,7 +2370,24 @@ $('logoClear').onclick = ()=>{ SET.logo=''; $('logo').value=''; render(); };
 function renderThumbs(){
   $('thumbs').innerHTML = photos.map((p,i)=>`<div><img src="${p}"><b data-rm="${i}">×</b></div>`).join('');
   $('rThumbs').innerHTML = rphotos.map((p,i)=>`<div><img src="${p}"><b data-rm="${i}">×</b></div>`).join('');
+  $('wThumbs').innerHTML = wphotos.map((p,i)=>`<div><img src="${p}"><b data-rm="${i}">×</b></div>`).join('');
+  $('pThumbs').innerHTML = pphotos.map((p,i)=>`<div><img src="${p}"><b data-rm="${i}">×</b></div>`).join('');
+  $('stThumbs').innerHTML = stphotos.map((p,i)=>`<div><img src="${p}"><b data-rm="${i}">×</b></div>`).join('');
+  $('qThumbs').innerHTML = qphotos.map((p,i)=>`<div><img src="${p}"><b data-rm="${i}">×</b></div>`).join('');
+  $('iThumbs').innerHTML = iphotos.map((p,i)=>`<div><img src="${p}"><b data-rm="${i}">×</b></div>`).join('');
 }
+$('wThumbs').addEventListener('click', e=>{
+  if(e.target.dataset.rm!==undefined){ wphotos.splice(+e.target.dataset.rm,1); renderThumbs(); render(); }
+});
+$('iThumbs').addEventListener('click', e=>{
+  if(e.target.dataset.rm!==undefined){ iphotos.splice(+e.target.dataset.rm,1); renderThumbs(); render(); }
+});
+$('stThumbs').addEventListener('click', e=>{
+  if(e.target.dataset.rm!==undefined){ stphotos.splice(+e.target.dataset.rm,1); renderThumbs(); render(); }
+});
+$('pThumbs').addEventListener('click', e=>{
+  if(e.target.dataset.rm!==undefined){ pphotos.splice(+e.target.dataset.rm,1); renderThumbs(); render(); }
+});
 $('rThumbs').addEventListener('click', e=>{
   if(e.target.dataset.rm!==undefined){ rphotos.splice(+e.target.dataset.rm,1); renderThumbs(); render(); }
 });
@@ -1399,7 +2410,7 @@ function lines(text){
 }
 function render(){
   persist();
-  ['p','r','q'].forEach(pf=>{
+  ['p','r','q','w','s','i'].forEach(pf=>{
     $(pf+'_hdr').innerHTML = SET.hdrText.split('\n').filter(Boolean).map(s=>`<div${s.length<=36?' class="nw"':''}>${esc(s)}</div>`).join('');
     $(pf+'_logo').innerHTML = `<img src="${SET.logo || DEFAULT_LOGO}">`;
     $(pf+'_year').textContent = SET.year ? 'العام الدراسي ' + toAr(SET.year) : '';
@@ -1427,6 +2438,11 @@ function render(){
   $('p_principal').textContent = SET.principal || '';
   renderReport();
   renderPlc();
+  renderWait();
+  renderStrat();
+  renderInit();
+  if(TAB==='an') renderAn();
+  if(TAB==='plan') renderPlan();
   fit();
 }
 
@@ -1470,6 +2486,7 @@ function renderPlc(){
   const half = Math.ceil(Q.attendees.length/2);
   const left = Q.attendees.slice(half);
   $('q_att').innerHTML = `<h4>أسماء وتواقيع الحاضرين</h4><div class="grid2"><div>${attTable(Q.attendees.slice(0,half),0)}</div><div>${left.length?attTable(left,half):''}</div></div>`;
+  $('q_evid').innerHTML = qphotos.length ? `<h4>الشواهد</h4><div class="imgs">${qphotos.map(p=>`<img src="${p}">`).join('')}</div>` : '';
   $('q_host').textContent = 'المعلم المنفّذ / ' + (Q.host||'');
   $('q_principal').textContent = 'مدير المدرسة / ' + (SET.principal||'');
 }
@@ -1498,20 +2515,27 @@ function fitOnePage(){
   else { n.textContent=''; }
 }
 function fit(){
-  fitOnePage();
   const w = $('holder').clientWidth || 794;
   const k = Math.min(1, w/794);
+  if(TAB==='an' || TAB==='plan'){
+    const sc = $(TAB==='an'?'scaler4':'scaler6');
+    sc.style.transform = `scale(${k})`;
+    $('holder').style.height = (sc.offsetHeight*k)+'px';
+    return;
+  }
+  fitOnePage();
   $(IDS[TAB][2]).style.transform = `scale(${k})`;
   $('holder').style.height = (PAGE_H*k)+'px';
 }
 window.addEventListener('resize', fit);
 
 /* ---------- export ---------- */
+const MULTI = {an:'#anPages .an-page', plan:'#plPages .an-page'};
 function say(t, bad){ const m=$('msg'); m.textContent=t; m.className = bad?'bad':'ok'; }
-async function snapshot(){
+async function snapshot(el){
   if(typeof html2canvas === 'undefined') throw new Error('مكتبة التحويل غير محمّلة');
   if(document.fonts && document.fonts.ready) await document.fonts.ready;
-  return html2canvas($(IDS[TAB][0]),{
+  return html2canvas(el || $(IDS[TAB][0]),{
     scale:2, useCORS:true, allowTaint:true, backgroundColor:'#ffffff', logging:false,
     onclone: doc=>{
       doc.querySelectorAll('.scaler').forEach(s=>{ s.style.transform='none'; s.style.position='static'; });
@@ -1521,6 +2545,16 @@ async function snapshot(){
 }
 const fname = ext => TAB==='report'
   ? `تقرير-الزيارات-التبادلية${R.host?'-'+R.host.replace(/\s+/g,'-'):''}.${ext}`
+  : TAB==='init'
+  ? `${initTitle().replace(/\s+/g,'-')}.${ext}`
+  : TAB==='strat'
+  ? `تقرير-تنفيذ-استراتيجية${ST.strategy?'-'+ST.strategy.replace(/\s+/g,'-'):''}.${ext}`
+  : TAB==='plan'
+  ? `خطة-علاجية${PL.subject?'-'+PL.subject.replace(/\s+/g,'-'):''}.${ext}`
+  : TAB==='wait'
+  ? `تفعيل-حصة-الانتظار${W.host?'-'+W.host.replace(/\s+/g,'-'):''}.${ext}`
+  : TAB==='an'
+  ? `تحليل-نتائج-اختبار${AN.subject?'-'+AN.subject.replace(/\s+/g,'-'):''}.${ext}`
   : TAB==='plc'
   ? `تقرير-جلسة-مجتمع-التعلم-المهني${Q.num?'-'+Q.num.replace(/\s+/g,'-'):''}.${ext}`
   : `استمارة-تبادل-زيارات${V.visitor?'-'+V.visitor.replace(/\s+/g,'-'):''}.${ext}`;
@@ -1537,13 +2571,17 @@ function fail(e){
 $('pdfBtn').onclick = async function(){
   this.disabled=true; say('جارٍ تجهيز الملف…');
   try{
-    const c = await snapshot();
-    const img = c.toDataURL('image/jpeg',0.95);
     const { jsPDF } = window.jspdf;
     const pdf = new jsPDF({unit:'mm',format:'a4'});
-    let w=210, h=c.height*w/c.width, x=0;
-    if(h>297){ const k=297/h; w*=k; h=297; x=(210-w)/2; }   // always exactly one page
-    pdf.addImage(img,'JPEG',x,0,w,h);
+    const els = MULTI[TAB] ? [...document.querySelectorAll(MULTI[TAB])] : [null];
+    for(let i=0;i<els.length;i++){
+      const c = await snapshot(els[i]);
+      const img = c.toDataURL('image/jpeg',0.95);
+      let w=210, h=c.height*w/c.width, x=0;
+      if(h>297){ const k=297/h; w*=k; h=297; x=(210-w)/2; }   // each page fits exactly one A4 sheet
+      if(i>0) pdf.addPage();
+      pdf.addImage(img,'JPEG',x,0,w,h);
+    }
     saveBlob(pdf.output('blob'), fname('pdf'));
     say('✓ تم تجهيز الملف وبدأ التحميل');
   }catch(e){ fail(e); }
@@ -1552,24 +2590,31 @@ $('pdfBtn').onclick = async function(){
 $('pngBtn').onclick = async function(){
   this.disabled=true; say('جارٍ تجهيز الصورة…');
   try{
-    const c = await snapshot();
-    c.toBlob(b=>{ saveBlob(b, fname('png')); say('✓ تم تجهيز الصورة وبدأ التحميل'); }, 'image/png');
+    const els = MULTI[TAB] ? [...document.querySelectorAll(MULTI[TAB])] : [null];
+    for(let i=0;i<els.length;i++){
+      const c = await snapshot(els[i]);
+      await new Promise(res=>c.toBlob(b=>{ saveBlob(b, els.length>1 ? fname('png').replace('.png','-'+(i+1)+'.png') : fname('png')); res(); }, 'image/png'));
+      await new Promise(r=>setTimeout(r,350));
+    }
+    say('✓ تم تجهيز الصورة وبدأ التحميل');
   }catch(e){ fail(e); }
   this.disabled=false;
 };
 $('printBtn').onclick = ()=>{ const old=document.title; document.title=fname('pdf').replace('.pdf',''); window.print(); document.title=old; };
 $('resetBtn').onclick = ()=>{
   if(!confirm('سيتم مسح بيانات هذا النموذج فقط. الترويسة والشعار واسم المدير ستبقى. هل تريد المتابعة؟')) return;
-  try{ localStorage.removeItem(TAB==='report'?'vf_report':TAB==='plc'?'vf_plc':'vf_visit'); }catch(e){}
+  try{ localStorage.removeItem(TAB==='report'?'vf_report':TAB==='plc'?'vf_plc':TAB==='an'?'vf_an':TAB==='wait'?'vf_wait':TAB==='plan'?'vf_plan':TAB==='strat'?'vf_strat':TAB==='init'?'vf_init':'vf_visit'); }catch(e){}
   location.reload();
 };
 
 /* ---------- tabs ---------- */
+const PANELS = {form:'formInputs',report:'reportInputs',plc:'plcInputs',an:'anInputs',wait:'wInputs',plan:'plInputs',strat:'stInputs',init:'iInputs'};
+const SCALERS = {form:'scaler',report:'scaler2',plc:'scaler3',an:'scaler4',wait:'scaler5',plan:'scaler6',strat:'scaler7',init:'scaler8'};
+const PDF_LABEL = {form:'⬇ تحميل الاستمارة PDF',report:'⬇ تحميل التقرير PDF',plc:'⬇ تحميل تقرير الجلسة PDF',an:'⬇ تحميل تحليل النتائج PDF',wait:'⬇ تحميل تقرير حصة الانتظار PDF',plan:'⬇ تحميل الخطة العلاجية PDF',strat:'⬇ تحميل تقرير الاستراتيجية PDF',init:'⬇ تحميل تقرير المبادرة PDF'};
 function applyTab(){
-  $('scaler').hidden = TAB!=='form'; $('scaler2').hidden = TAB!=='report'; $('scaler3').hidden = TAB!=='plc';
-  $('formInputs').hidden = TAB!=='form'; $('reportInputs').hidden = TAB!=='report'; $('plcInputs').hidden = TAB!=='plc';
+  Object.keys(PANELS).forEach(k=>{ $(PANELS[k]).hidden = (k!==TAB); $(SCALERS[k]).hidden = (k!==TAB); });
   document.querySelectorAll('#tabs button').forEach(b=>b.classList.toggle('on', b.dataset.tab===TAB));
-  $('pdfBtn').textContent = TAB==='form' ? '⬇ تحميل الاستمارة PDF' : TAB==='report' ? '⬇ تحميل التقرير PDF' : '⬇ تحميل تقرير الجلسة PDF';
+  $('pdfBtn').textContent = PDF_LABEL[TAB];
   $('fitNote').textContent=''; $('msg').textContent='';
 }
 document.querySelectorAll('#tabs button').forEach(b=>b.addEventListener('click', ()=>{
@@ -1577,12 +2622,13 @@ document.querySelectorAll('#tabs button').forEach(b=>b.addEventListener('click',
 }));
 
 $('footer').placeholder = schoolName();
+renderPlStudents();
 renderVisBox();
 renderAttBox();
 renderThumbs();
 applyTab();
 render();
-if(document.fonts && document.fonts.ready) document.fonts.ready.then(fit);
+if(document.fonts && document.fonts.ready) document.fonts.ready.then(()=>render());
 </script>
 </body>
 </html>
