@@ -289,7 +289,7 @@ td.s{text-align:center;white-space:nowrap}
     <h1>توثيق تقارير التطوير المهني</h1>
     <p class="sub">أدخل البيانات فقط وسيظهر النموذج مباشرة، ثم حمّله PDF.</p>
 
-    <details>
+    <details id="fixedSettings" hidden>
       <summary>الإعدادات الثابتة: الترويسة والشعار والمدير (مشتركة بين النموذجين)</summary>
       <div class="sec">
         <div><label>أسطر الترويسة (كل سطر على حدة)</label><textarea id="hdrText" style="min-height:120px"></textarea></div>
@@ -1438,7 +1438,7 @@ function store(key,val){
   try{ localStorage.setItem(key, JSON.stringify(val)); return true; }
   catch(e){ storageOK=false; return false; }
 }
-let SET = Object.assign({}, SETTINGS_DEFAULT, load('vf_settings')||{});
+let SET = Object.assign({}, SETTINGS_DEFAULT);   // fixed: header, year, term, principal and logo are built in and not editable
 let V   = Object.assign({}, VISIT_DEFAULT,    load('vf_visit')||{});
 if(!SET.principal) SET.principal = SETTINGS_DEFAULT.principal;
 SET.hdrText = SET.hdrText.replace('الإدارة العامة للتعليم\nبمنطقة جازان','الإدارة العامة للتعليم بمنطقة جازان');
