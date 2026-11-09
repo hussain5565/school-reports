@@ -286,6 +286,16 @@ td.s{text-align:center;white-space:nowrap}
 .cr.on{outline:2px solid currentColor}
 .adv-body svg{display:block;width:100%;height:auto}
 .adv-body svg text{font-family:inherit}
+.rt-tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:5px;margin-bottom:7px}
+.rt-t{border-radius:8px;padding:4px 5px;text-align:center;font-size:10px;line-height:1.35;font-weight:700}
+.rt-t b{display:block;font-size:15px;font-weight:800}
+.rt-t.r{background:#fde8e6;color:#b3261e}.rt-t.a{background:#fff1d6;color:#9a6200}.rt-t.g{background:#dff3e7;color:#14804a}
+.rt-i{display:grid;grid-template-columns:1fr 44px;gap:2px 6px;font-size:11.5px;margin-bottom:5px;align-items:center}
+.rt-i .n{font-weight:700;color:#0b2f44}.rt-i .p{text-align:left;font-weight:800;color:#b3261e}
+.rt-i .bar{grid-column:1/-1;height:5px;border-radius:3px;background:#f3d3d0;overflow:hidden}.rt-i .bar i{display:block;height:100%;background:#d9534f}
+.rt-ok{background:#dff3e7;color:#14804a;border-radius:8px;padding:8px;text-align:center;font-size:12px;font-weight:700}
+.rt-nil{color:#8a9ba3;font-size:12px;text-align:center;padding:14px 0}
+.rt-note{margin-top:5px;font-size:10px;color:#5d7079;line-height:1.5}
 .fnd{margin:0;padding:0;list-style:none;display:grid;gap:4px;font-size:12px;line-height:1.55}
 .fnd li{display:flex;gap:7px;align-items:flex-start}
 .fnd li::before{content:"";flex:none;width:8px;height:8px;border-radius:50%;background:#0f8f6a;margin-top:6px}
@@ -2840,8 +2850,22 @@ function advPage1(C){
         <div class="donutWrap">${advDonut(empty?0:meanPct/100,donutCol)}<div class="donutTxt"><b style="color:${donutCol}">${empty?'—':toAr(meanPct.toFixed(1))+'٪'}</b><small>متوسط الإتقان</small></div></div>
         <div class="legend"><span>أعلى ${empty?'—':toAr(fs_(A.max))}</span><span>الوسيط ${empty?'—':toAr(fs_(A.median))}</span><span>أدنى ${empty?'—':toAr(fs_(A.min))}</span></div></div>
     </div>
-    <div class="adv-card"><h5>نسبة الحاصلين على درجة كل سؤال / مهارة (من عدد طلاب الفصل)</h5>${C.skills.length ? advSkillsChart(C,140) : `<div style="height:120px;display:flex;align-items:center;justify-content:center;color:#8a9ba3;font-size:13px">أضف الأسئلة / المهارات من لوحة الإدخال لتظهر النسب هنا</div>`}</div>
-    <div class="adv-card"><h5>أبرز النتائج</h5><ul class="fnd">${fnd}</ul></div>`;
+    <div class="adv-card"><h5>نسبة الحاصلين على درجة كل سؤال / مهارة (من عدد طلاب الفصل)</h5>${C.skills.length ? advSkillsChart(C,125) : `<div style="height:120px;display:flex;align-items:center;justify-content:center;color:#8a9ba3;font-size:13px">أضف الأسئلة / المهارات من لوحة الإدخال لتظهر النسب هنا</div>`}</div>
+    <div class="adv-row" style="grid-template-columns:1.25fr 1fr"><div class="adv-card"><h5>أبرز النتائج</h5><ul class="fnd">${fnd}</ul></div>${advReteachCard(C)}</div>`;
+}
+function advReteachCard(C){
+  const ks=C.skills.filter(k=>k.total>0);
+  let inner;
+  if(!ks.length){ inner='<div class="rt-nil">أضف الأسئلة / المهارات لتظهر المهارات التي تحتاج إعادة شرح.</div>'; }
+  else{
+    const low=ks.filter(k=>k.pct<50).sort((a,b)=>a.pct-b.pct), mid=ks.filter(k=>k.pct>=50&&k.pct<80).length, hi=ks.filter(k=>k.pct>=80).length;
+    const tiers=`<div class="rt-tiers"><div class="rt-t r"><b>${toAr(String(low.length))}</b>أقل من ٥٠٪<br>إعادة شرح</div><div class="rt-t a"><b>${toAr(String(mid))}</b>٥٠٪ إلى أقل من ٨٠٪<br>دعم إضافي</div><div class="rt-t g"><b>${toAr(String(hi))}</b>٨٠٪ فأكثر<br>تعزيز وإثراء</div></div>`;
+    const list = low.length
+      ? low.slice(0,3).map((k,i)=>`<div class="rt-i"><span class="n">${esc(k.name||('مهارة '+toAr(i+1)))}</span><span class="p">${toAr(k.pct.toFixed(0))}٪</span><span class="bar"><i style="width:${k.pct.toFixed(0)}%"></i></span></div>`).join('')+(low.length>3?`<div class="rt-note">و${toAr(String(low.length-3))} مهارات أخرى دون ٥٠٪ (انظر جدول الإتقان).</div>`:'')
+      : '<div class="rt-ok">✓ لا توجد مهارة دون ٥٠٪، فلا حاجة لإعادة شرح.</div>';
+    inner=tiers+list;
+  }
+  return `<div class="adv-card"><h5>مهارات تحتاج إعادة شرح</h5>${inner}</div>`;
 }
 function advPlanTable(C){
   const rows = advPlan(C);
